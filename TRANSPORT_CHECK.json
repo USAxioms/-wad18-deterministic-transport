@@ -1,0 +1,48 @@
+{
+ "Q4_surrogate_within_bounds": {
+  "REF": true,
+  "S110": true,
+  "S140": true
+ },
+ "convergence_REF_white": {
+  "REF_white_P1": "0.001374066515677705",
+  "REF_white_S4": "-0.000005929879401413",
+  "REF_white_cells5cm": "-0.014057052465267949"
+ },
+ "designs": {
+  "S110": {
+   "Q1_direction": "AGREE",
+   "Q2_magnitude_within_transport_range": "NO",
+   "Q3_requirement_1p155": "DEPENDS_ON_BOUNDARY",
+   "surrogate_relative_gain": "0.122517479453003599",
+   "transport_relative_gain_vacuum": "0.269791083603636978",
+   "transport_relative_gain_white": "0.171157419601823095"
+  },
+  "S140": {
+   "Q1_direction": "AGREE",
+   "Q2_magnitude_within_transport_range": "NO",
+   "Q3_requirement_1p155": "DEPENDS_ON_BOUNDARY",
+   "surrogate_relative_gain": "0.115935142557202252",
+   "transport_relative_gain_vacuum": "0.266177152346454721",
+   "transport_relative_gain_white": "0.169713437390830272"
+  }
+ },
+ "rules": "docs/prereg/TRANSPORT_CHECK.md",
+ "table": {
+  "REF": {
+   "surrogate": "1.160212082166137517",
+   "vacuum": "0.453142775392961988",
+   "white": "1.299831105956324167"
+  },
+  "S110": {
+   "surrogate": "1.302358342104053794",
+   "vacuum": "0.575396655793388689",
+   "white": "1.522306843969992518"
+  },
+  "S140": {
+   "surrogate": "1.294721435308657123",
+   "vacuum": "0.573759028953429745",
+   "white": "1.520429910975696458"
+  }
+ }
+}
