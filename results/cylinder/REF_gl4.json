@@ -1,0 +1,26 @@
+{
+ "balance_residual": "0.000000000000012886",
+ "case": "REF_gl4",
+ "cells": 47,
+ "cylinder_tbr": "1.268149792137259601",
+ "design": "REF",
+ "directions": 16,
+ "geometry_override": {},
+ "leak_outer": "0.003041594988245323",
+ "net_removal": "0.996958405011741790",
+ "numerics_override": {
+  "gl_order": 4
+ },
+ "p1_iterations": 3005,
+ "source_group": 44,
+ "surrogate_tbr": "1.160212082166137517",
+ "tbr_1d": "1.546524136752755611",
+ "tbr_by_zone": {
+  "breeding": "1.383280377502502313",
+  "gap": "0.000000000000000000",
+  "manifold": "0.163243759250253297",
+  "plasma": "0.000000000000000000",
+  "shield": "0.000000000000000000"
+ },
+ "tritium_other_nuclides": "0.000005970298563284"
+}

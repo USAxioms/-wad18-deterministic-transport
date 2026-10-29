@@ -1,0 +1,26 @@
+{
+ "balance_residual": "0.000000000000030037",
+ "case": "REF_az16",
+ "cells": 47,
+ "cylinder_tbr": "1.268209092849202413",
+ "design": "REF",
+ "directions": 64,
+ "geometry_override": {},
+ "leak_outer": "0.003027034300079653",
+ "net_removal": "0.996972965699890309",
+ "numerics_override": {
+  "azimuths": 16
+ },
+ "p1_iterations": 3005,
+ "source_group": 44,
+ "surrogate_tbr": "1.160212082166137517",
+ "tbr_1d": "1.546596454694149285",
+ "tbr_by_zone": {
+  "breeding": "1.383344672902315852",
+  "gap": "0.000000000000000000",
+  "manifold": "0.163251781791833433",
+  "plasma": "0.000000000000000000",
+  "shield": "0.000000000000000000"
+ },
+ "tritium_other_nuclides": "0.000005970139039498"
+}

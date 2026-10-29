@@ -1,0 +1,25 @@
+{
+ "balance_residual": "0.000000000000019814",
+ "case": "S110",
+ "cells": 48,
+ "cylinder_tbr": "1.485139903375157443",
+ "design": "S110",
+ "directions": 32,
+ "geometry_override": {},
+ "leak_outer": "0.002484547174584795",
+ "net_removal": "0.997515452825395390",
+ "numerics_override": {},
+ "p1_iterations": 3189,
+ "source_group": 44,
+ "surrogate_tbr": "1.302358342104053794",
+ "tbr_1d": "1.811146223628240785",
+ "tbr_by_zone": {
+  "breeding": "1.701746078425109869",
+  "gap": "0.000000000000000000",
+  "manifold": "0.109400145203130916",
+  "multiplier": "0.000000000000000000",
+  "plasma": "0.000000000000000000",
+  "shield": "0.000000000000000000"
+ },
+ "tritium_other_nuclides": "0.014058321939658798"
+}
