@@ -1,0 +1,51 @@
+{
+ "convergence": {
+  "REF_az16": "-0.000083555668534348",
+  "REF_cells5cm": "-0.032891264145087065",
+  "REF_gl4": "-0.000130311173889514"
+ },
+ "designs": {
+  "REF": {
+   "C1_within_slab_bracket": "YES",
+   "C3_requirement_1p155": "MET",
+   "C4_surrogate_relative_error": "-0.085233541999280499",
+   "cylinder_tbr": "1.268315067762601504",
+   "slab_vacuum": "0.453142775392961988",
+   "slab_white": "1.299831105956324167",
+   "surrogate": "1.160212082166137517"
+  },
+  "S110": {
+   "C1_within_slab_bracket": "YES",
+   "C2_direction": "AGREE",
+   "C3_requirement_1p155": "MET",
+   "C4_gain_within_U": "NO",
+   "C4_surrogate_relative_error": "-0.123073631551957338",
+   "cylinder_relative_gain": "0.170955026178984420",
+   "cylinder_tbr": "1.485139903375157443",
+   "slab_vacuum": "0.575396655793388689",
+   "slab_white": "1.522306843969992518",
+   "surrogate": "1.302358342104053794",
+   "surrogate_relative_gain": "0.122517479453003599"
+  },
+  "S140": {
+   "C1_within_slab_bracket": "YES",
+   "C2_direction": "AGREE",
+   "C3_requirement_1p155": "MET",
+   "C4_gain_within_U": "NO",
+   "C4_surrogate_relative_error": "-0.126729444978769122",
+   "cylinder_relative_gain": "0.168961934930649064",
+   "cylinder_tbr": "1.482612035713467938",
+   "slab_vacuum": "0.573759028953429745",
+   "slab_white": "1.520429910975696458",
+   "surrogate": "1.294721435308657123",
+   "surrogate_relative_gain": "0.115935142557202252"
+  }
+ },
+ "numerical_uncertainty_U": "0.032891264145087065",
+ "rules": "docs/prereg/CYLINDER_CHECK.md",
+ "sensitivity_first_wall_radius": {
+  "REF": "1.268315067762601504",
+  "REF_fw2p5m": "1.267078100593594309",
+  "REF_fw4m": "1.269517128559591954"
+ }
+}
