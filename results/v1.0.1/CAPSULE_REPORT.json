@@ -1,0 +1,73 @@
+{
+ "R3_evaluations": 874,
+ "R3_stop_reason": "FIXED_POINT",
+ "arithmetic": "WAD-18 pure integer; see results/zero_float_audit.json",
+ "capsule": "fusion-blanket-r3-capsule",
+ "front_designs_dominating_reference_nominal": 16,
+ "front_designs_meeting_selection_rule": 0,
+ "hypervolume": {
+  "NSGA2_min_median_max": [
+   "0.249450769789242098",
+   "0.266526526117472924",
+   "0.270991614679426319"
+  ],
+  "R3": "0.264212248006163532",
+  "R3_rank_among_all_runs": 4,
+  "RANDOM_min_median_max": [
+   "0.147793768145882294",
+   "0.198204959596962005",
+   "0.209311809606698041"
+  ],
+  "total_runs": 11
+ },
+ "model_class": "REDUCED_ORDER_SURROGATE",
+ "no_single_overall_status": "Deliberately omitted: per-obligation outcomes must not be collapsed into one PASS/FAIL string.",
+ "output_checks_all_ok": true,
+ "proof_obligations": {
+  "PO1_reproducible_execution": {
+   "files_compared": 12,
+   "files_identical": 12,
+   "scope": "Same-machine re-execution by the capsule itself. Independent third-party reproduction is a separate step not performed here.",
+   "status": "PASS"
+  },
+  "PO2_constraint_satisfaction": {
+   "detail": "No R3 front design satisfies the predeclared selection rule (dominates the reference AND every normalised constraint slack >= selection_margin). 16 front designs dominate the reference at nominal theta, but each lies within the margin of at least one constraint; see 13_front_diagnostics.json.",
+   "reason": "NO_CANDIDATE",
+   "status": "FAIL"
+  },
+  "PO3_engineering_improvement": {
+   "detail": "No R3 front design satisfies the predeclared selection rule (dominates the reference AND every normalised constraint slack >= selection_margin). 16 front designs dominate the reference at nominal theta, but each lies within the margin of at least one constraint; see 13_front_diagnostics.json.",
+   "front_designs_dominating_reference_nominal": 16,
+   "reason": "NO_CANDIDATE",
+   "status": "FAIL"
+  },
+  "PO4_contribution_of_R3": {
+   "R3_evaluations_used": 874,
+   "R3_stop_reason": "FIXED_POINT",
+   "hv_NSGA2_max": "0.270991614679426319",
+   "hv_NSGA2_median": "0.266526526117472924",
+   "hv_R3": "0.264212248006163532",
+   "hv_RANDOM_median": "0.198204959596962005",
+   "note": "R3 is deterministic (single run); baselines are 5 seeds each. Small-sample comparison.",
+   "status": "FAIL"
+  },
+  "PO5_robustness": {
+   "detail": "No R3 front design satisfies the predeclared selection rule (dominates the reference AND every normalised constraint slack >= selection_margin). 16 front designs dominate the reference at nominal theta, but each lies within the margin of at least one constraint; see 13_front_diagnostics.json.",
+   "reason": "NO_CANDIDATE",
+   "status": "FAIL"
+  },
+  "PO6_physical_relevance": {
+   "detail": "Reduced-order surrogate correlations with declared, unvalidated constants. No Monte Carlo transport (e.g. OpenMC), CFD, benchmark, or experimental comparison was performed. No claim about a physical blanket follows from this capsule.",
+   "status": "NOT_ESTABLISHED"
+  }
+ },
+ "reference": {
+  "dp": "20797.644947894205371313",
+  "tbr": "1.160212082166137517"
+ },
+ "tests": {
+  "failed": 0,
+  "passed": 49
+ },
+ "version": "1.0.0"
+}

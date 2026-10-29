@@ -1,0 +1,81 @@
+{
+ "PO1_status": "PASS",
+ "byte_identical_rerun": true,
+ "files_compared": 12,
+ "identical": 12,
+ "rows": [
+  {
+   "file": "00_environment.json",
+   "identical": true,
+   "recorded_sha256": "7e528461f7ecb41053dc4e8634d5dcb2c7226103530aa0d0bb341fa317253365",
+   "rerun_sha256": "7e528461f7ecb41053dc4e8634d5dcb2c7226103530aa0d0bb341fa317253365"
+  },
+  {
+   "file": "01_spec_validation.json",
+   "identical": true,
+   "recorded_sha256": "69626cadded0ab99bbba6805daa9f35fb4e500344486176b2776f6135fbd981c",
+   "rerun_sha256": "69626cadded0ab99bbba6805daa9f35fb4e500344486176b2776f6135fbd981c"
+  },
+  {
+   "file": "02_frozen_protocol.json",
+   "identical": true,
+   "recorded_sha256": "5684f501a528c5dca0dd073f44d72448c700db6bf1289575c7eb23c0efaa8fd3",
+   "rerun_sha256": "5684f501a528c5dca0dd073f44d72448c700db6bf1289575c7eb23c0efaa8fd3"
+  },
+  {
+   "file": "03_reference_evaluation.json",
+   "identical": true,
+   "recorded_sha256": "c6afff15a6f27be037d28d3cb383e424104a8043ad09a0cec95df5a5b7a30b2d",
+   "rerun_sha256": "c6afff15a6f27be037d28d3cb383e424104a8043ad09a0cec95df5a5b7a30b2d"
+  },
+  {
+   "file": "04_r3_evaluations.jsonl",
+   "identical": true,
+   "recorded_sha256": "53aebdb106739a9e4c035827831e4989f054cc3ea735a4a293d477bda3b15445",
+   "rerun_sha256": "53aebdb106739a9e4c035827831e4989f054cc3ea735a4a293d477bda3b15445"
+  },
+  {
+   "file": "05_r3_iterations.json",
+   "identical": true,
+   "recorded_sha256": "45fdb69cd4dc3c7cf963f77f06971fc34e24907c63d745fb6177ad2ba5623e19",
+   "rerun_sha256": "45fdb69cd4dc3c7cf963f77f06971fc34e24907c63d745fb6177ad2ba5623e19"
+  },
+  {
+   "file": "06_baseline_evaluations.jsonl",
+   "identical": true,
+   "recorded_sha256": "9c8b3850181b160b6a2e6c15f18360fc0ecd405e6da9ade70f2fc66cc04c74c3",
+   "rerun_sha256": "9c8b3850181b160b6a2e6c15f18360fc0ecd405e6da9ade70f2fc66cc04c74c3"
+  },
+  {
+   "file": "07_comparison.json",
+   "identical": true,
+   "recorded_sha256": "a5c9f921cf1871f6fbc14ee28d750612d854fc43cbca3d60e51b2d616b23e5a0",
+   "rerun_sha256": "a5c9f921cf1871f6fbc14ee28d750612d854fc43cbca3d60e51b2d616b23e5a0"
+  },
+  {
+   "file": "08_selected_candidate.json",
+   "identical": true,
+   "recorded_sha256": "407053e52c228b56bbc7340096063739bf3c4975b98a8b8120314f16bbbcafcd",
+   "rerun_sha256": "407053e52c228b56bbc7340096063739bf3c4975b98a8b8120314f16bbbcafcd"
+  },
+  {
+   "file": "11_output_checks.json",
+   "identical": true,
+   "recorded_sha256": "8df2b12717a3ac5d801cc38d9bf8cc030db89c374b439251f72d5e4426ecc84d",
+   "rerun_sha256": "8df2b12717a3ac5d801cc38d9bf8cc030db89c374b439251f72d5e4426ecc84d"
+  },
+  {
+   "file": "12_proof_obligations.json",
+   "identical": true,
+   "recorded_sha256": "01894f2a9b91338053a16c340c86ca3011b828c0d48a7bdabb7fd2aee34f36e3",
+   "rerun_sha256": "01894f2a9b91338053a16c340c86ca3011b828c0d48a7bdabb7fd2aee34f36e3"
+  },
+  {
+   "file": "13_front_diagnostics.json",
+   "identical": true,
+   "recorded_sha256": "727963fc69044f3720d68eacd1d8df35a1e8b45f3f59276601c70f896d31de01",
+   "rerun_sha256": "727963fc69044f3720d68eacd1d8df35a1e8b45f3f59276601c70f896d31de01"
+  }
+ ],
+ "scope": "Same-machine re-execution by the capsule itself. Independent third-party reproduction is a separate step not performed here."
+}

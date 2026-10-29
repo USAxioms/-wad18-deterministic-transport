@@ -1,0 +1,146 @@
+{
+ "all_ok": true,
+ "checks": [
+  {
+   "check": "design_order_matches_variables",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_positive_step_t_b",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_size_t_b",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_positive_step_e_li6",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_size_e_li6",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_positive_step_t_mult",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_size_t_mult",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_positive_step_f_struct",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_size_f_struct",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_positive_step_f_cool",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_size_f_cool",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_positive_step_d_h",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "grid_size_d_h",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "reference_on_grid",
+   "detail": "(20, 12, 0, 8, 6, 8)",
+   "ok": true
+  },
+  {
+   "check": "constraint_names_unique",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "constraint_senses_valid",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "theta_rel_in_open_unit_interval",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "theta_corner_count_is_64",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "budget_positive",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "baseline_seeds_present",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "hv_reference_consistent_with_constraints",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "acceptance_rule_declared_PO1_reproducible_execution",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "acceptance_rule_declared_PO2_constraint_satisfaction",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "acceptance_rule_declared_PO3_engineering_improvement",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "acceptance_rule_declared_PO4_contribution_of_R3",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "acceptance_rule_declared_PO5_robustness",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "acceptance_rule_declared_PO6_physical_relevance",
+   "detail": "",
+   "ok": true
+  },
+  {
+   "check": "stopping_rules_declared",
+   "detail": "",
+   "ok": true
+  }
+ ],
+ "spec_sha256": "29b701f225f07fb9e6c70d9232b4e945ab9694e20e3185acb61b5fdb8319586d"
+}

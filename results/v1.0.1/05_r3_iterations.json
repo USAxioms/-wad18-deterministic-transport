@@ -1,0 +1,2391 @@
+{
+ "direction_success_tries": {
+  "0+": [
+   7,
+   58
+  ],
+  "0-": [
+   0,
+   55
+  ],
+  "1+": [
+   0,
+   0
+  ],
+  "1-": [
+   0,
+   62
+  ],
+  "2+": [
+   20,
+   55
+  ],
+  "2-": [
+   1,
+   24
+  ],
+  "3+": [
+   0,
+   65
+  ],
+  "3-": [
+   0,
+   53
+  ],
+  "4+": [
+   14,
+   15
+  ],
+  "4-": [
+   12,
+   43
+  ],
+  "5+": [
+   15,
+   49
+  ],
+  "5-": [
+   0,
+   41
+  ]
+ },
+ "iterations": [
+  {
+   "accepted": 3,
+   "archive_size": 3,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 6, 8]": [
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 26,
+   "evaluations_total": 27,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     6,
+     8
+    ]
+   ],
+   "hv": "0.141458945224882896",
+   "hv_gain": "0.087508210591069183",
+   "iteration": 1,
+   "proposals": 10,
+   "repair_evaluations": 16,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 6,
+   "archive_size": 6,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 10, 8]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 0, 8, 7, 12]": [
+     "C04_breeder_temp_max",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 2, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 60,
+   "evaluations_total": 87,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     10,
+     8
+    ],
+    [
+     20,
+     12,
+     0,
+     8,
+     7,
+     12
+    ],
+    [
+     20,
+     12,
+     2,
+     8,
+     6,
+     8
+    ]
+   ],
+   "hv": "0.203678351031267698",
+   "hv_gain": "0.062219405806384802",
+   "iteration": 2,
+   "proposals": 34,
+   "repair_evaluations": 31,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 6,
+   "archive_size": 7,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 14, 8]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 2, 8, 7, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 4, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 60,
+   "evaluations_total": 147,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     14,
+     8
+    ],
+    [
+     20,
+     12,
+     2,
+     8,
+     7,
+     12
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     6,
+     8
+    ]
+   ],
+   "hv": "0.246312345116765036",
+   "hv_gain": "0.042633994085497338",
+   "iteration": 3,
+   "proposals": 35,
+   "repair_evaluations": 31,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 5,
+   "archive_size": 8,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 16, 8]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 4, 8, 10, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 4, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ]
+   },
+   "evaluations": 58,
+   "evaluations_total": 205,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     16,
+     8
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     6,
+     8
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     10,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     8
+    ]
+   ],
+   "hv": "0.250546195128745619",
+   "hv_gain": "0.004233850011980583",
+   "iteration": 4,
+   "proposals": 45,
+   "repair_evaluations": 31,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 3,
+   "archive_size": 6,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 16, 12]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ]
+   },
+   "evaluations": 39,
+   "evaluations_total": 244,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     8
+    ]
+   ],
+   "hv": "0.252429036292371608",
+   "hv_gain": "0.001882841163625989",
+   "iteration": 5,
+   "proposals": 34,
+   "repair_evaluations": 22,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 1,
+   "archive_size": 5,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 16, 12]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ]
+   },
+   "evaluations": 17,
+   "evaluations_total": 261,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     12
+    ]
+   ],
+   "hv": "0.253162304967244553",
+   "hv_gain": "0.000733268674872945",
+   "iteration": 6,
+   "proposals": 34,
+   "repair_evaluations": 9,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 2,
+   "archive_size": 7,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 16, 12]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 2, 8, 16, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 14, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ]
+   },
+   "evaluations": 49,
+   "evaluations_total": 310,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     2,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     14,
+     12
+    ]
+   ],
+   "hv": "0.253874254604324223",
+   "hv_gain": "0.000711949637079670",
+   "iteration": 7,
+   "proposals": 45,
+   "repair_evaluations": 32,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 0,
+   "archive_size": 7,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 16, 12]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ]
+   },
+   "evaluations": 0,
+   "evaluations_total": 310,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     12
+    ]
+   ],
+   "hv": "0.253874254604324223",
+   "hv_gain": "0.000000000000000000",
+   "iteration": 8,
+   "proposals": 34,
+   "repair_evaluations": 0,
+   "step": [
+    7,
+    3,
+    2,
+    5,
+    4,
+    4
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 7,
+   "archive_size": 11,
+   "binding_constraints": {
+    "[20, 12, 0, 8, 16, 12]": [
+     "C01_tbr_min",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ]
+   },
+   "evaluations": 60,
+   "evaluations_total": 370,
+   "focus": [
+    [
+     20,
+     12,
+     0,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     12
+    ]
+   ],
+   "hv": "0.263083274294765291",
+   "hv_gain": "0.009209019690441068",
+   "iteration": 9,
+   "proposals": 34,
+   "repair_evaluations": 30,
+   "step": [
+    3,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 1,
+   "archive_size": 11,
+   "binding_constraints": {
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[23, 12, 0, 9, 16, 12]": [
+     "C01_tbr_min",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 58,
+   "evaluations_total": 428,
+   "focus": [
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     23,
+     12,
+     0,
+     9,
+     16,
+     12
+    ]
+   ],
+   "hv": "0.263208699091191904",
+   "hv_gain": "0.000125424796426613",
+   "iteration": 10,
+   "proposals": 34,
+   "repair_evaluations": 32,
+   "step": [
+    3,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 0,
+   "archive_size": 11,
+   "binding_constraints": {
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[23, 12, 0, 9, 16, 12]": [
+     "C01_tbr_min",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 0,
+   "evaluations_total": 428,
+   "focus": [
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     23,
+     12,
+     0,
+     9,
+     16,
+     12
+    ]
+   ],
+   "hv": "0.263208699091191904",
+   "hv_gain": "0.000000000000000000",
+   "iteration": 11,
+   "proposals": 34,
+   "repair_evaluations": 0,
+   "step": [
+    3,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "unit_step": false
+  },
+  {
+   "accepted": 18,
+   "archive_size": 19,
+   "binding_constraints": {
+    "[20, 12, 2, 8, 16, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 4, 8, 16, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 12, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 14, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 16, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 8, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[23, 12, 0, 9, 16, 12]": [
+     "C01_tbr_min",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[23, 12, 1, 9, 16, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 119,
+   "evaluations_total": 547,
+   "focus": [
+    [
+     23,
+     12,
+     0,
+     9,
+     16,
+     12
+    ],
+    [
+     23,
+     12,
+     1,
+     9,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     2,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     14,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     12,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     8,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ]
+   ],
+   "hv": "0.263772194583840769",
+   "hv_gain": "0.000563495492648865",
+   "iteration": 12,
+   "proposals": 125,
+   "repair_evaluations": 28,
+   "step": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "unit_step": true
+  },
+  {
+   "accepted": 13,
+   "archive_size": 20,
+   "binding_constraints": {
+    "[20, 12, 4, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 11, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 12, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 13, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 14, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 15, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 5, 8]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 7, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 8, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 9, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[23, 12, 0, 9, 16, 13]": [
+     "C01_tbr_min",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[23, 12, 1, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[23, 12, 2, 9, 16, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[24, 12, 0, 9, 16, 12]": [
+     "C01_tbr_min",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[24, 12, 1, 9, 16, 12]": [
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 145,
+   "evaluations_total": 692,
+   "focus": [
+    [
+     23,
+     12,
+     0,
+     9,
+     16,
+     13
+    ],
+    [
+     24,
+     12,
+     0,
+     9,
+     16,
+     12
+    ],
+    [
+     23,
+     12,
+     1,
+     9,
+     16,
+     13
+    ],
+    [
+     24,
+     12,
+     1,
+     9,
+     16,
+     12
+    ],
+    [
+     23,
+     12,
+     2,
+     9,
+     16,
+     12
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     15,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     14,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     13,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     12,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     11,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     9,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     8,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     7,
+     10
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     5,
+     8
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ]
+   ],
+   "hv": "0.264072325276316935",
+   "hv_gain": "0.000300130692476166",
+   "iteration": 13,
+   "proposals": 219,
+   "repair_evaluations": 22,
+   "step": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "unit_step": true
+  },
+  {
+   "accepted": 3,
+   "archive_size": 20,
+   "binding_constraints": {
+    "[20, 12, 3, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 4, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 5, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 11, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 12, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 13, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 14, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 15, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 5, 9]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 7, 11]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 8, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 9, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[23, 12, 2, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[24, 12, 0, 9, 16, 13]": [
+     "C01_tbr_min",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[24, 12, 1, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[25, 12, 0, 9, 16, 12]": [
+     "C01_tbr_min",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 101,
+   "evaluations_total": 793,
+   "focus": [
+    [
+     24,
+     12,
+     0,
+     9,
+     16,
+     13
+    ],
+    [
+     25,
+     12,
+     0,
+     9,
+     16,
+     12
+    ],
+    [
+     24,
+     12,
+     1,
+     9,
+     16,
+     13
+    ],
+    [
+     23,
+     12,
+     2,
+     9,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     3,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     5,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     15,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     14,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     13,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     12,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     11,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     9,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     8,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     7,
+     11
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     5,
+     9
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ]
+   ],
+   "hv": "0.264120515957680419",
+   "hv_gain": "0.000048190681363484",
+   "iteration": 14,
+   "proposals": 230,
+   "repair_evaluations": 23,
+   "step": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "unit_step": true
+  },
+  {
+   "accepted": 2,
+   "archive_size": 20,
+   "binding_constraints": {
+    "[20, 12, 3, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 4, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 5, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 11, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 12, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 13, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 14, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 15, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 5, 9]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 7, 11]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 8, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 9, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[21, 12, 3, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[23, 12, 2, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[24, 12, 1, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[25, 12, 0, 9, 16, 13]": [
+     "C01_tbr_min",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 33,
+   "evaluations_total": 826,
+   "focus": [
+    [
+     25,
+     12,
+     0,
+     9,
+     16,
+     13
+    ],
+    [
+     24,
+     12,
+     1,
+     9,
+     16,
+     13
+    ],
+    [
+     23,
+     12,
+     2,
+     9,
+     16,
+     13
+    ],
+    [
+     21,
+     12,
+     3,
+     9,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     3,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     5,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     15,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     14,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     13,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     12,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     11,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     9,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     8,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     7,
+     11
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     5,
+     9
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ]
+   ],
+   "hv": "0.264168264309111754",
+   "hv_gain": "0.000047748351431335",
+   "iteration": 15,
+   "proposals": 231,
+   "repair_evaluations": 19,
+   "step": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "unit_step": true
+  },
+  {
+   "accepted": 2,
+   "archive_size": 20,
+   "binding_constraints": {
+    "[20, 12, 4, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 5, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 11, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 12, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 13, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 14, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 15, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 5, 9]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 7, 11]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 8, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 9, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[21, 12, 4, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[22, 12, 3, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[23, 12, 2, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[24, 12, 1, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[25, 12, 0, 9, 16, 13]": [
+     "C01_tbr_min",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 17,
+   "evaluations_total": 843,
+   "focus": [
+    [
+     25,
+     12,
+     0,
+     9,
+     16,
+     13
+    ],
+    [
+     24,
+     12,
+     1,
+     9,
+     16,
+     13
+    ],
+    [
+     23,
+     12,
+     2,
+     9,
+     16,
+     13
+    ],
+    [
+     22,
+     12,
+     3,
+     9,
+     16,
+     13
+    ],
+    [
+     21,
+     12,
+     4,
+     9,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     4,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     5,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     15,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     14,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     13,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     12,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     11,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     9,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     8,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     7,
+     11
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     5,
+     9
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ]
+   ],
+   "hv": "0.264212248006163532",
+   "hv_gain": "0.000043983697051778",
+   "iteration": 16,
+   "proposals": 231,
+   "repair_evaluations": 7,
+   "step": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "unit_step": true
+  },
+  {
+   "accepted": 0,
+   "archive_size": 20,
+   "binding_constraints": {
+    "[20, 12, 5, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[20, 12, 6, 8, 10, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 11, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 12, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 13, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 14, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 15, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 4, 8]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 5, 9]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 6, 10]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 7, 11]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 8, 12]": [
+     "C04_breeder_temp_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[20, 12, 6, 8, 9, 13]": [
+     "C04_breeder_temp_max",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction",
+     "C10_mult_inventory_max"
+    ],
+    "[21, 12, 5, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[22, 12, 3, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[22, 12, 4, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[23, 12, 2, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[24, 12, 1, 9, 16, 13]": [
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ],
+    "[25, 12, 0, 9, 16, 13]": [
+     "C01_tbr_min",
+     "C05_hoop_stress_max",
+     "C06_shield_attenuation",
+     "C08_structure_fraction"
+    ]
+   },
+   "evaluations": 31,
+   "evaluations_total": 874,
+   "focus": [
+    [
+     25,
+     12,
+     0,
+     9,
+     16,
+     13
+    ],
+    [
+     24,
+     12,
+     1,
+     9,
+     16,
+     13
+    ],
+    [
+     23,
+     12,
+     2,
+     9,
+     16,
+     13
+    ],
+    [
+     22,
+     12,
+     3,
+     9,
+     16,
+     13
+    ],
+    [
+     22,
+     12,
+     4,
+     9,
+     16,
+     13
+    ],
+    [
+     21,
+     12,
+     5,
+     9,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     5,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     16,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     15,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     14,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     13,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     12,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     11,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     10,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     9,
+     13
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     8,
+     12
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     7,
+     11
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     6,
+     10
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     5,
+     9
+    ],
+    [
+     20,
+     12,
+     6,
+     8,
+     4,
+     8
+    ]
+   ],
+   "hv": "0.264212248006163532",
+   "hv_gain": "0.000000000000000000",
+   "iteration": 17,
+   "proposals": 231,
+   "repair_evaluations": 18,
+   "step": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "unit_step": true
+  }
+ ],
+ "stop_reason": "FIXED_POINT"
+}

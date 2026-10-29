@@ -1,0 +1,17 @@
+{
+ "all_ok": true,
+ "checks": [
+  {
+   "check": "r3_hv_recomputed_from_log",
+   "ok": true
+  },
+  {
+   "check": "r3_archive_invariants",
+   "ok": true
+  },
+  {
+   "check": "budgets_respected",
+   "ok": true
+  }
+ ]
+}
