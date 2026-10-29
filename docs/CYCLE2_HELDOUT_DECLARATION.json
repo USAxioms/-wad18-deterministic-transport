@@ -1,0 +1,14 @@
+{
+ "declared": "before any cycle-2 R3 development run",
+ "purpose": "Held-out conditions for confirming the cycle-2 R3 design (protocol v1.3.0). Not used for development.",
+ "instances": [
+  {"name": "H5_low_blanket_coverage", "constants": {"coverage": "0.78"}, "theta": {}},
+  {"name": "H6_long_coolant_path", "constants": {"channel_length": "50"}, "theta": {}},
+  {"name": "H7_pessimistic_nuclear_data", "constants": {}, "theta": {"t0": "1.85", "mult_gain": "0.22"}},
+  {"name": "H8_hot_low_conductivity", "constants": {"wall_load": "1100000"}, "theta": {"k_breeder": "13.5"}}
+ ],
+ "budgets": [1500, 3000],
+ "seeds": [201, 202, 203, 204, 205, 206, 207],
+ "rule": "PASS iff median HV(R3) > median HV(NSGA-II) in at least 6 of 8 cells; STRONG iff additionally median HV(R3) > max HV(NSGA-II) in at least 6 of 8 cells; otherwise FAIL.",
+ "multiplicity_note": "This is the second confirmatory cycle. Cycle 1 (H1-H4, seeds 101-107) failed 2/8 and is now development data."
+}
