@@ -1,0 +1,17 @@
+{
+ "byte_identical_rerun": true,
+ "rows": [
+  {
+   "file": "heldout_runs.jsonl",
+   "identical": true,
+   "recorded_sha256": "cbed434bdfa049130bbe5e26f317f8307ccdb7e06ce36b09c9d0713ff22ed9c8",
+   "rerun_sha256": "cbed434bdfa049130bbe5e26f317f8307ccdb7e06ce36b09c9d0713ff22ed9c8"
+  },
+  {
+   "file": "heldout_summary.json",
+   "identical": true,
+   "recorded_sha256": "308fe0ba8fa71738b3894655c87396a45fa8aaf817b453758cf612c800308497",
+   "rerun_sha256": "308fe0ba8fa71738b3894655c87396a45fa8aaf817b453758cf612c800308497"
+  }
+ ]
+}
