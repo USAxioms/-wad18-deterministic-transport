@@ -1,0 +1,278 @@
+{
+ "front": [
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "5219.334544407393713280",
+   "key": [
+    20,
+    12,
+    1,
+    9,
+    16,
+    12
+   ],
+   "min_normalised_slack": "0.050000000000000000",
+   "tbr": "1.164775065541354063"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "5574.863173490600709807",
+   "key": [
+    19,
+    12,
+    2,
+    9,
+    16,
+    12
+   ],
+   "min_normalised_slack": "0.058467741935483870",
+   "tbr": "1.199778685046112865"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "5729.415800374488132306",
+   "key": [
+    19,
+    12,
+    3,
+    9,
+    16,
+    12
+   ],
+   "min_normalised_slack": "0.050303030303030302",
+   "tbr": "1.233449349356602986"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "6063.634154230312871233",
+   "key": [
+    18,
+    12,
+    4,
+    9,
+    16,
+    12
+   ],
+   "min_normalised_slack": "0.052121212121212121",
+   "tbr": "1.254040659458499641"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "6399.748263183163595443",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    16,
+    12
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.269051340381638396"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "7032.214930627044651836",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    15,
+    12
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.273594906123458727"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "7766.984364967613411561",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    14,
+    12
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.278135769054636281"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "8627.799920120775773512",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    13,
+    12
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.282673961335923974"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "9645.797075846190340083",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    12,
+    12
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.287209515022293014"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "10862.470197674237867819",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    11,
+    12
+   ],
+   "min_normalised_slack": "0.053924828660320064",
+   "tbr": "1.291742462062572576"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "12759.805073207424318204",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    10,
+    11
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.294624474760595163"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "15157.893056149513005076",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    9,
+    10
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.297587673855500257"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": true,
+   "dp": "17559.556365596570243943",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    8,
+    10
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.302358342104053794"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": false,
+   "dp": "21399.117886781639293207",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    7,
+    9
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.305555826135227622"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": false,
+   "dp": "26536.057132347833635251",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    6,
+    8
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.308880212976212936"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": false,
+   "dp": "33598.531840951420196943",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    5,
+    7
+   ],
+   "min_normalised_slack": "0.053939393939393939",
+   "tbr": "1.312354419113634853"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": false,
+   "dp": "41693.038388166987882258",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    4,
+    7
+   ],
+   "min_normalised_slack": "0.050580998969081185",
+   "tbr": "1.317592292208359096"
+  },
+  {
+   "constraints_below_selection_margin": [],
+   "dominates_reference_nominal": false,
+   "dp": "55718.542366298021493707",
+   "key": [
+    17,
+    12,
+    5,
+    9,
+    3,
+    6
+   ],
+   "min_normalised_slack": "0.051343024070742980",
+   "tbr": "1.321440627235329754"
+  }
+ ],
+ "front_designs_dominating_reference_nominal": 13,
+ "front_designs_meeting_selection_rule": 1,
+ "front_size": 18,
+ "selection_margin": "0.050000000000000000"
+}

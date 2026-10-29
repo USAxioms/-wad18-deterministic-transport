@@ -1,0 +1,40 @@
+{
+ "PO1_reproducible_execution": {
+  "detail": "Determined by reproduce.py, which re-executes the pipeline and compares every result file byte-for-byte. Independent third-party reproduction has not occurred.",
+  "status": "SEE_REPRODUCTION_CHECK"
+ },
+ "PO2_constraint_satisfaction": {
+  "min_normalised_slack": "0.053939393939393939",
+  "scope": "nominal theta, surrogate model",
+  "status": "PASS"
+ },
+ "PO3_engineering_improvement": {
+  "dp_candidate": "17559.556365596570243943",
+  "dp_reference": "20797.644947894205371313",
+  "scope": "nominal theta, surrogate model",
+  "status": "PASS",
+  "tbr_candidate": "1.302358342104053794",
+  "tbr_reference": "1.160212082166137517"
+ },
+ "PO4_contribution_of_R3": {
+  "R3_evaluations_used": 1000,
+  "R3_stop_reason": "BUDGET",
+  "hv_NSGA2_max": "0.214107675253899371",
+  "hv_NSGA2_median": "0.208245845255379326",
+  "hv_R3": "0.211350344031578124",
+  "hv_RANDOM_median": "0.129937064295187681",
+  "note": "R3 is deterministic (single run); baselines are 5 seeds each. Small-sample comparison.",
+  "status": "SEE_HELDOUT"
+ },
+ "PO5_robustness": {
+  "corners": 64,
+  "dominates_reference": 64,
+  "feasible": 64,
+  "feasible_and_dominates": 64,
+  "status": "PASS"
+ },
+ "PO6_physical_relevance": {
+  "detail": "Reduced-order surrogate correlations with declared, unvalidated constants. No Monte Carlo transport (e.g. OpenMC), CFD, benchmark, or experimental comparison was performed. No claim about a physical blanket follows from this capsule.",
+  "status": "NOT_ESTABLISHED"
+ }
+}

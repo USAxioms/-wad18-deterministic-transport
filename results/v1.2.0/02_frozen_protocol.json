@@ -1,0 +1,40 @@
+{
+ "acceptance": {
+  "PO1_reproducible_execution": "PASS iff two complete executions produce byte-identical result files (checked by reproduce.py).",
+  "PO2_constraint_satisfaction": "PASS iff the selected candidate has every constraint slack >= 0 under nominal theta (declared limits).",
+  "PO3_engineering_improvement": "PASS iff TBR(d*) >= TBR(d0) and dp(d*) <= dp(d0) with at least one strict, nominal theta.",
+  "PO4_contribution_of_R3": "Decided ONLY on the held-out cells. PASS iff median HV(R3) > median HV(NSGA-II) in at least 6 of 8 cells; STRONG iff additionally median HV(R3) > max HV(NSGA-II) in at least 6 of 8 cells; otherwise FAIL. Equal unique-evaluation budget per run. The development-instance single run is reported but does not decide PO4.",
+  "PO5_robustness": "PASS iff d* is feasible and dominates d0 at all 64 theta corners; otherwise PARTIAL (with counts) or FAIL if feasible at no corner.",
+  "PO6_physical_relevance": "Cannot be established by this capsule: requires benchmarked transport/thermal-hydraulic models and experimental evidence. Always reported NOT_ESTABLISHED here."
+ },
+ "baseline_seeds": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "budget_unique_evaluations": 1000,
+ "hv_reference": {
+  "dp": "200000.000000000000000000",
+  "tbr": "1.100000000000000000"
+ },
+ "reference_design": {
+  "d_h": "0.010000000000000000",
+  "e_li6": "0.900000000000000000",
+  "f_cool": "0.025000000000000000",
+  "f_struct": "0.100000000000000000",
+  "t_b": "0.500000000000000000",
+  "t_mult": "0.000000000000000000"
+ },
+ "reference_key": [
+  20,
+  12,
+  0,
+  8,
+  6,
+  8
+ ],
+ "selection_margin": "0.050000000000000000",
+ "spec_sha256": "956710ebac93d5a1d8294af1261e24b5fe581467adc45676bfab83534939ee54"
+}
