@@ -1,0 +1,123 @@
+{
+ "PO4_status": "FAIL",
+ "cells": [
+  {
+   "budget": 1000,
+   "instance": "H1_high_wall_load",
+   "median_hv": {
+    "NSGA2": "0.201268712290683590",
+    "R3": "0.129830350456381575",
+    "RANDOM": "0.116423036652423881"
+   },
+   "nsga2_max_hv": "0.204625264198466415",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": false,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 1
+  },
+  {
+   "budget": 2000,
+   "instance": "H1_high_wall_load",
+   "median_hv": {
+    "NSGA2": "0.203945979055749166",
+    "R3": "0.181812285643095626",
+    "RANDOM": "0.134278395014156876"
+   },
+   "nsga2_max_hv": "0.205926684443724130",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": false,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 2
+  },
+  {
+   "budget": 1000,
+   "instance": "H2_low_wall_load",
+   "median_hv": {
+    "NSGA2": "0.216352357346789590",
+    "R3": "0.200876554877112076",
+    "RANDOM": "0.145943720668387611"
+   },
+   "nsga2_max_hv": "0.221261176748581926",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": false,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 0
+  },
+  {
+   "budget": 2000,
+   "instance": "H2_low_wall_load",
+   "median_hv": {
+    "NSGA2": "0.219403771100186717",
+    "R3": "0.200876554877112076",
+    "RANDOM": "0.154064270255575756"
+   },
+   "nsga2_max_hv": "0.223460834944532856",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": false,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 1
+  },
+  {
+   "budget": 1000,
+   "instance": "H3_wider_radial_build",
+   "median_hv": {
+    "NSGA2": "0.243288812779251410",
+    "R3": "0.238367543369815332",
+    "RANDOM": "0.178008132038642167"
+   },
+   "nsga2_max_hv": "0.253109063220124566",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": false,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 2
+  },
+  {
+   "budget": 2000,
+   "instance": "H3_wider_radial_build",
+   "median_hv": {
+    "NSGA2": "0.249265687427309447",
+    "R3": "0.249386222559308573",
+    "RANDOM": "0.190963995620507931"
+   },
+   "nsga2_max_hv": "0.254626026161617206",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": true,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 4
+  },
+  {
+   "budget": 1000,
+   "instance": "H4_low_breeder_conductivity",
+   "median_hv": {
+    "NSGA2": "0.202211481546011478",
+    "R3": "0.147524658395067833",
+    "RANDOM": "0.124594265863317405"
+   },
+   "nsga2_max_hv": "0.208923944952131827",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": false,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 1
+  },
+  {
+   "budget": 2000,
+   "instance": "H4_low_breeder_conductivity",
+   "median_hv": {
+    "NSGA2": "0.206323635472390322",
+    "R3": "0.208369893936579802",
+    "RANDOM": "0.141317512894821153"
+   },
+   "nsga2_max_hv": "0.211378451605120215",
+   "r3_median_gt_nsga2_max": false,
+   "r3_median_gt_nsga2_median": true,
+   "r3_median_gt_random_median": true,
+   "r3_seeds_beating_nsga2_median": 4
+  }
+ ],
+ "cells_r3_median_beats_nsga2_max": 0,
+ "cells_r3_median_beats_nsga2_median": 2,
+ "cells_total": 8,
+ "r3_sha256": "c683b62564467f12c80aca569f44440fad9f3b4df4d7d60b973c93f8d19684f1",
+ "rule": "Decided ONLY on the held-out cells. PASS iff median HV(R3) > median HV(NSGA-II) in at least 6 of 8 cells; STRONG iff additionally median HV(R3) > max HV(NSGA-II) in at least 6 of 8 cells; otherwise FAIL. Equal unique-evaluation budget per run. The development-instance single run is reported but does not decide PO4.",
+ "spec_sha256": "956710ebac93d5a1d8294af1261e24b5fe581467adc45676bfab83534939ee54"
+}
