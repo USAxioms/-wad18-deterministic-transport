@@ -1,0 +1,110 @@
+{
+ "_note": "All real-valued quantities are exact decimal strings parsed to WAD-18 integers. SI units unless stated. Every constant is a declared surrogate-model assumption, not a validated material or nuclear-data value; see docs/MODEL_CARD.md.",
+ "metadata": {
+  "title": "Advancing Nuclear Fusion Through Invariant-Driven Recursive Refinement",
+  "subtitle": "Reproducibility capsule for integrated breeding blanket performance",
+  "author": "Michael A. Russell",
+  "manuscript_date": "2026-10-28",
+  "spec_version": "1.3.0",
+  "arithmetic": "WAD-18 (integer-exact fixed point, scale 10^18, floor rounding, signed 256-bit results)",
+  "model_class": "REDUCED_ORDER_SURROGATE (1-D parametric correlations; not Monte Carlo transport, not CFD)"
+ },
+ "design_space": {
+  "order": ["t_b", "e_li6", "t_mult", "f_struct", "f_cool", "d_h"],
+  "variables": {
+   "t_b":      {"unit": "m",        "lo": "0.30",   "step": "0.01",   "n": 31, "meaning": "breeding-zone radial thickness", "group": "g"},
+   "e_li6":    {"unit": "fraction", "lo": "0.30",   "step": "0.05",   "n": 13, "meaning": "Li-6 enrichment of the breeder", "group": "b"},
+   "t_mult":   {"unit": "m",        "lo": "0.00",   "step": "0.01",   "n": 9,  "meaning": "optional neutron-multiplier layer thickness", "group": "b"},
+   "f_struct": {"unit": "fraction", "lo": "0.060",  "step": "0.005",  "n": 21, "meaning": "stiffening-structure volume fraction of breeding zone", "group": "m"},
+   "f_cool":   {"unit": "fraction", "lo": "0.0100", "step": "0.0025", "n": 17, "meaning": "coolant flow-area fraction of breeding zone", "group": "c"},
+   "d_h":      {"unit": "m",        "lo": "0.0060", "step": "0.0005", "n": 17, "meaning": "coolant tube inner diameter", "group": "g"}
+  }
+ },
+ "reference_design": {
+  "t_b": "0.50", "e_li6": "0.90", "t_mult": "0.00", "f_struct": "0.100", "f_cool": "0.0250", "d_h": "0.0100"
+ },
+ "constants": {
+  "coverage":            {"value": "0.82",      "unit": "1",        "meaning": "blanket coverage fraction (ports, divertor)"},
+  "k_enrich":            {"value": "0.10",      "unit": "1",        "meaning": "enrichment saturation constant"},
+  "beta_steel":          {"value": "1.5",       "unit": "1",        "meaning": "parasitic-capture coefficient of steel"},
+  "beta_cool":           {"value": "0.3",       "unit": "1",        "meaning": "parasitic-capture coefficient of coolant"},
+  "lambda_mult":         {"value": "0.05",      "unit": "m",        "meaning": "multiplier saturation length"},
+  "radial_build":        {"value": "1.00",      "unit": "m",        "meaning": "radial space for breeding zone + multiplier + manifold + shield"},
+  "t_manifold":          {"value": "0.15",      "unit": "m",        "meaning": "manifold/back-plate thickness"},
+  "lsh_breeder":         {"value": "0.25",      "unit": "m",        "meaning": "fast-flux attenuation length in breeding zone"},
+  "lsh_mult":            {"value": "0.20",      "unit": "m",        "meaning": "fast-flux attenuation length in multiplier"},
+  "lsh_shield":          {"value": "0.09",      "unit": "m",        "meaning": "fast-flux attenuation length in shield"},
+  "wall_load":           {"value": "1000000",   "unit": "W/m^2",    "meaning": "neutron wall load"},
+  "fw_area":             {"value": "1",         "unit": "m^2",      "meaning": "first-wall area of analysed module slice"},
+  "module_width":        {"value": "1",         "unit": "m",        "meaning": "toroidal width of analysed slice"},
+  "eps0":                {"value": "1.15",      "unit": "1",        "meaning": "blanket energy multiplication without multiplier layer"},
+  "eps_mult":            {"value": "0.5",       "unit": "1",        "meaning": "energy multiplication per unit multiplier gain"},
+  "lambda_energy":       {"value": "0.15",      "unit": "m",        "meaning": "energy-deposition length"},
+  "cp":                  {"value": "5500",      "unit": "J/kg/K",   "meaning": "water heat capacity at 15.5 MPa, ~310 C"},
+  "dT_cool":             {"value": "33",        "unit": "K",        "meaning": "coolant temperature rise (295 -> 328 C)"},
+  "T_out":               {"value": "328",       "unit": "C",        "meaning": "coolant outlet temperature"},
+  "rho":                 {"value": "700",       "unit": "kg/m^3",   "meaning": "water density"},
+  "mu":                  {"value": "0.000086",  "unit": "Pa s",     "meaning": "water dynamic viscosity"},
+  "k_water":             {"value": "0.55",      "unit": "W/m/K",    "meaning": "water thermal conductivity"},
+  "channel_length":      {"value": "40",        "unit": "m",        "meaning": "equivalent coolant path length (multi-pass)"},
+  "k_form":              {"value": "40",        "unit": "1",        "meaning": "summed form-loss coefficient"},
+  "peak0":               {"value": "2.0",       "unit": "1",        "meaning": "power-density peaking factor base"},
+  "peak_enrich":         {"value": "1.0",       "unit": "1",        "meaning": "peaking increase per unit enrichment"},
+  "tube_wall":           {"value": "0.0010",    "unit": "m",        "meaning": "coolant tube wall thickness"},
+  "p_cool":              {"value": "15500000",  "unit": "Pa",       "meaning": "coolant pressure"},
+  "fs_min0":             {"value": "0.06",      "unit": "1",        "meaning": "minimum stiffener fraction intercept"},
+  "fs_min_slope":        {"value": "0.08",      "unit": "1/m",      "meaning": "minimum stiffener fraction per metre of box depth"},
+  "be_inventory_rate":   {"value": "50",        "unit": "g/m/m^2",  "meaning": "tritium retained in multiplier per metre thickness"},
+  "pump_eff":            {"value": "0.80",      "unit": "1",        "meaning": "pump efficiency (reported quantity only)"}
+ },
+ "theta": {
+  "_note": "Uncertain model parameters. rel = symmetric relative half-range for UQ corners and one-at-a-time sensitivity.",
+  "t0":          {"nominal": "1.90",  "rel": "0.03", "meaning": "intrinsic 1-D breeding potential"},
+  "lambda0":     {"nominal": "0.18",  "rel": "0.05", "meaning": "breeding attenuation length of pure breeder [m]"},
+  "mult_gain":   {"nominal": "0.25",  "rel": "0.10", "meaning": "saturated multiplier TBR gain"},
+  "fric_coeff":  {"nominal": "0.316", "rel": "0.10", "meaning": "Blasius friction coefficient"},
+  "nu_coeff":    {"nominal": "0.023", "rel": "0.15", "meaning": "Dittus-Boelter coefficient"},
+  "k_breeder":   {"nominal": "15",    "rel": "0.10", "meaning": "breeder thermal conductivity [W/m/K]"}
+ },
+ "objectives": {
+  "tbr": {"sense": "max", "meaning": "tritium breeding ratio"},
+  "dp":  {"sense": "min", "unit": "Pa", "meaning": "coolant pressure drop"}
+ },
+ "constraints": [
+  {"name": "C01_tbr_min",           "output": "tbr",          "sense": "ge", "limit": "1.10",      "unit": "1",   "meaning": "TBR required for fuel self-sufficiency incl. recovery losses and margin"},
+  {"name": "C02_pressure_drop_max", "output": "dp",           "sense": "le", "limit": "200000",    "unit": "Pa",  "meaning": "pumping/flow-stability limit"},
+  {"name": "C03_wall_temp_max",     "output": "T_wall",       "sense": "le", "limit": "550",       "unit": "C",   "meaning": "structural steel temperature limit"},
+  {"name": "C04_breeder_temp_max",  "output": "T_peak",       "sense": "le", "limit": "550",       "unit": "C",   "meaning": "breeder/steel compatibility limit applied to peak breeder temperature"},
+  {"name": "C05_hoop_stress_max",   "output": "sigma_hoop",   "sense": "le", "limit": "100000000", "unit": "Pa",  "meaning": "irradiated allowable tube hoop stress"},
+  {"name": "C06_shield_attenuation","output": "atten_exponent","sense": "ge", "limit": "5.5",      "unit": "1",   "meaning": "magnet fast-flux attenuation e^-5.5 or better"},
+  {"name": "C07_shield_thickness",  "output": "t_shield",     "sense": "ge", "limit": "0.10",      "unit": "m",   "meaning": "minimum dedicated shield thickness"},
+  {"name": "C08_structure_fraction","output": "f_struct_ratio", "sense": "ge", "limit": "1",       "unit": "1",   "meaning": "stiffener fraction / depth-dependent minimum >= 1 (normalised form; revised in 1.0.1)"},
+  {"name": "C09_ligament_min",      "output": "ligament",     "sense": "ge", "limit": "0.003",     "unit": "m",   "meaning": "manufacturing ligament between tubes"},
+  {"name": "C10_mult_inventory_max","output": "inv_mult",     "sense": "le", "limit": "3",         "unit": "g/m^2","meaning": "multiplier tritium inventory"},
+  {"name": "C11_velocity_max",      "output": "velocity",     "sense": "le", "limit": "3.0",       "unit": "m/s", "meaning": "erosion-corrosion velocity limit"}
+ ],
+ "evaluation_protocol": {
+  "budget_unique_evaluations": 1000,
+  "hypervolume_reference": {"tbr": "1.10", "dp": "200000"},
+  "hypervolume_dp_normalisation": "dp axis divided by the reference dp so HV is dimensionless",
+  "baseline_primary": "NSGA2",
+  "baseline_secondary": "RANDOM",
+  "baseline_seeds": [1, 2, 3, 4, 5],
+  "heldout": {"purpose": "Cycle-2 confirmatory PO4 test of the v1.3.0 R3 design. Declared in docs/prereg/CYCLE2_HELDOUT_DECLARATION.json before any cycle-2 development; development used only the v1.1.0 conditions and the used cycle-1 cells H1-H4.", "instances": [{"name": "H5_low_blanket_coverage", "constants": {"coverage": "0.78"}, "theta": {}}, {"name": "H6_long_coolant_path", "constants": {"channel_length": "50"}, "theta": {}}, {"name": "H7_pessimistic_nuclear_data", "constants": {}, "theta": {"t0": "1.85", "mult_gain": "0.22"}}, {"name": "H8_hot_low_conductivity", "constants": {"wall_load": "1100000"}, "theta": {"k_breeder": "13.5"}}], "budgets": [1500, 3000], "seeds": [201, 202, 203, 204, 205, 206, 207], "seed_use": "R3 init_lhs_seed, NSGA-II seed and random-search seed each take every listed seed", "cell": "one (instance, budget) pair; 8 cells", "statistic": "median hypervolume over the 7 seeds, per method, per cell"},
+  "nsga2": {"population": 20, "mutation_one_in": 6, "mutation_max_step": 3, "max_generations": 5000, "stagnation_generations": 200},
+  "r3": {"initial_step_divisor": 6, "repair_limit_per_iteration": 4, "max_iterations": 10000, "restart_on_fixed_point": true, "empty_archive_focus": "least_violation", "init_lhs_points": 40, "reseed_on_fixed_point": 20, "init_lhs_seed": 0, "escalate": true, "pair_cap": 60, "recombine_n": 20},
+  "r3_rule_changes_1_1_0": "(a) At a unit-step fixed point, if the cycle that just ended gained hypervolume, steps reset to their initial values and a new coarse-to-fine cycle starts; the run stops at FIXED_POINT only when a complete cycle gains nothing, or at BUDGET. (b) If the archive is empty, the focus is the evaluated design with least violation (lowest key on ties).",
+  "selection_rule": "From the R3 front, among designs that Pareto-dominate the reference and have every normalised constraint slack >= selection_margin, choose maximum TBR; ties -> lower dp; ties -> lexicographically smallest grid index.",
+  "selection_margin": "0.05",
+  "search_constraint_margin": "0.05",
+  "search_constraint_margin_rule": "During search, for EVERY method, a design is feasible only if every normalised constraint slack >= search_constraint_margin; constraint-violation magnitude is measured below that margin. Reference evaluation, PO2, PO5 corners and sensitivity use the declared limits (margin 0).",
+  "acceptance": {
+   "PO1_reproducible_execution": "PASS iff two complete executions produce byte-identical result files (checked by reproduce.py).",
+   "PO2_constraint_satisfaction": "PASS iff the selected candidate has every constraint slack >= 0 under nominal theta (declared limits).",
+   "PO3_engineering_improvement": "PASS iff TBR(d*) >= TBR(d0) and dp(d*) <= dp(d0) with at least one strict, nominal theta.",
+   "PO4_contribution_of_R3": "Decided ONLY on the held-out cells. PASS iff median HV(R3) > median HV(NSGA-II) in at least 6 of 8 cells; STRONG iff additionally median HV(R3) > max HV(NSGA-II) in at least 6 of 8 cells; otherwise FAIL. Equal unique-evaluation budget per run. The development-instance single run is reported but does not decide PO4.",
+   "PO5_robustness": "PASS iff d* is feasible and dominates d0 at all 64 theta corners; otherwise PARTIAL (with counts) or FAIL if feasible at no corner.",
+   "PO6_physical_relevance": "Cannot be established by this capsule: requires benchmarked transport/thermal-hydraulic models and experimental evidence. Always reported NOT_ESTABLISHED here."
+  }
+ }
+}

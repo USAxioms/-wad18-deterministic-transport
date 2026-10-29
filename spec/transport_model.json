@@ -1,0 +1,143 @@
+{
+ "_note": "Declared assumptions of the transport-based TBR model (model v2). Every value here is an assumption of this capsule, chosen before any design was evaluated with transport. Values marked unverified could not be checked against a primary source in this environment.",
+ "nuclear_data": "FENDL-3.2c MATXS, 211 neutron groups, 293.6 K, data/nuclear/ (verified by ndata_verify.py)",
+ "numerics": {
+  "sn_order": 8,
+  "legendre_order": 3,
+  "max_cell_cm": "2.5",
+  "tolerance": "0.000000001"
+ },
+ "source": {
+  "energy_eV": "14100000",
+  "angular": "isotropic incident angular flux on the plasma-side boundary, normalised to unit incident current",
+  "boundaries": "vacuum on both sides (neutrons returning to the plasma are lost; conservative for a torus)"
+ },
+ "tbr_definition": "tritons produced in Li-6 and Li-7 (MATXS .h3 production), per incident neutron, times blanket coverage (constants.coverage); tritium produced in other nuclides (Be-9, structure) is reported separately and not counted",
+ "constants": {
+  "avogadro_per_barn_cm": "0.602214076",
+  "neutron_mass_u": "1.00866491595"
+ },
+ "isotopic_abundance_atom_fraction": {
+  "Pb": {
+   "82Pb204.m": "0.014",
+   "82Pb206.m": "0.241",
+   "82Pb207.m": "0.221",
+   "82Pb208.m": "0.524"
+  },
+  "Fe": {
+   "26Fe054.m": "0.05845",
+   "26Fe056.m": "0.91754",
+   "26Fe057.m": "0.02119",
+   "26Fe058.m": "0.00282"
+  },
+  "Cr": {
+   "24Cr050.m": "0.04345",
+   "24Cr052.m": "0.83789",
+   "24Cr053.m": "0.09501",
+   "24Cr054.m": "0.02365"
+  },
+  "W": {
+   "74W_182.m": "0.2650",
+   "74W_183.m": "0.1431",
+   "74W_184.m": "0.3064",
+   "74W_186.m": "0.2843"
+  },
+  "O": {
+   "08O_016.m": "1"
+  },
+  "H": {
+   "01H_001.m": "1"
+  },
+  "Be": {
+   "04Be009.m": "1"
+  },
+  "_note": "Natural abundances; W-180 (0.12 %) omitted and W renormalised; O-17/O-18 and deuterium omitted. Li isotopics are the design variable e_li6."
+ },
+ "materials": {
+  "PbLi": {
+   "density_g_cm3": "9.70",
+   "atom_fraction": {
+    "Pb": "0.843",
+    "Li": "0.157"
+   },
+   "status": "Pb-15.7Li eutectic; density is an assumed value near 600 K, unverified"
+  },
+  "EUROFER": {
+   "density_g_cm3": "7.75",
+   "weight_fraction": {
+    "Fe": "0.899",
+    "Cr": "0.090",
+    "W": "0.011"
+   },
+   "status": "minor elements (Mn, V, Ta, C) omitted and lumped into Fe; unverified"
+  },
+  "water": {
+   "density_g_cm3": "0.70",
+   "status": "matches constants.rho of the surrogate (15.5 MPa, ~300 C)"
+  },
+  "Be": {
+   "density_g_cm3": "1.85",
+   "status": "multiplier layer taken as fully dense beryllium (the surrogate's multiplier inventory constant is named be_inventory_rate)"
+  }
+ },
+ "zones_plasma_to_back": [
+  {
+   "zone": "multiplier",
+   "thickness": "t_mult",
+   "volume_fraction": {
+    "Be": "1"
+   }
+  },
+  {
+   "zone": "breeding",
+   "thickness": "t_b",
+   "volume_fraction": {
+    "EUROFER": "f_steel (= f_struct + f_tube, as in the surrogate)",
+    "water": "f_cool",
+    "PbLi": "1 - f_steel - f_cool"
+   }
+  },
+  {
+   "zone": "manifold",
+   "thickness": "constants.t_manifold",
+   "volume_fraction": {
+    "EUROFER": "0.50",
+    "PbLi": "0.25",
+    "water": "0.25"
+   }
+  },
+  {
+   "zone": "shield",
+   "thickness": "constants.radial_build - t_mult - t_b - t_manifold",
+   "volume_fraction": {
+    "EUROFER": "0.80",
+    "water": "0.20"
+   }
+  }
+ ],
+ "omitted": [
+  "first wall (the surrogate has none; included identically in neither model)",
+  "S(alpha,beta) bound-hydrogen thermal scattering (free-gas H-1 data)",
+  "temperature above 293.6 K",
+  "gamma transport and nuclear heating",
+  "3-D geometry, ports and gaps (represented only by the coverage factor)"
+ ],
+ "cylinder": {
+  "_note": "Model v2c: the poloidal cross-section as an infinite circular cylinder (toroidal curvature neglected). Neutrons leaving the blanket front cross the plasma chamber and re-enter on the far side, replacing the slab's vacuum/white idealisations. Ports and divertor remain represented by constants.coverage.",
+  "plasma_radius_m": "2.9",
+  "first_wall_radius_m": "3.1",
+  "radii_status": "assumed, approximately EU-DEMO-like minor radius plus a 0.2 m vacuum gap; unverified",
+  "source": "14.1 MeV, isotropic, uniform over the plasma cross-section (a real plasma source is centrally peaked)",
+  "outer_boundary": "vacuum behind the shield",
+  "numerics": {
+   "gl_order": 8,
+   "azimuths": 8,
+   "legendre_order": 1,
+   "max_cell_cm": "2.5",
+   "plasma_cells": 6,
+   "gap_cells": 1,
+   "tolerance": "0.0000000000001"
+  },
+  "numerics_status": "step differencing in space and angle (first order, positive, conservative); P1 scattering (slab: P1 vs P3 changed TBR by 0.14 %)"
+ }
+}
