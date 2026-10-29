@@ -1,0 +1,55 @@
+{
+ "cycles": [
+  {
+   "cells": 8,
+   "cells_won": 2,
+   "cycle": "cycle 1",
+   "r3_seeds_beating_nsga2_median": 15,
+   "seeds": 56,
+   "status": "FAIL"
+  },
+  {
+   "cells": 8,
+   "cells_won": 5,
+   "cycle": "cycle 2",
+   "r3_seeds_beating_nsga2_median": 37,
+   "seeds": 56,
+   "status": "FAIL"
+  },
+  {
+   "cells": 8,
+   "cells_won": 7,
+   "cycle": "cycle 3",
+   "r3_seeds_beating_nsga2_median": 41,
+   "seeds": 56,
+   "status": "PASS"
+  }
+ ],
+ "null_model": "each cell a fair coin, cells independent",
+ "p_any_of_cycles_ge_observed": {
+  "denominator": 16777216,
+  "numerator": 1707993,
+  "wad": "0.101804316043853759"
+ },
+ "p_any_of_cycles_pass_ge6": {
+  "denominator": 16777216,
+  "numerator": 6273757,
+  "wad": "0.373945057392120361"
+ },
+ "p_seed_level_final_cycle_ge_observed": {
+  "denominator": 72057594037927936,
+  "numerator": 24700051833634,
+  "wad": "0.000342782078189191"
+ },
+ "p_single_cycle_ge_observed": {
+  "denominator": 256,
+  "numerator": 9,
+  "wad": "0.035156250000000000"
+ },
+ "p_single_cycle_pass_ge6": {
+  "denominator": 256,
+  "numerator": 37,
+  "wad": "0.144531250000000000"
+ },
+ "reading": "A single confirmatory pass after 3 cycles is weaker evidence than one first-attempt pass. Under the idealised null, the chance that at least one of 3 cycles reaches the observed cell count is p_any_of_cycles_ge_observed."
+}

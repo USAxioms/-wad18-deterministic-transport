@@ -1,0 +1,55 @@
+{
+ "failed": 0,
+ "failures": [],
+ "passed": 61,
+ "per_module_passed_total": {
+  "test_audit": [
+   2,
+   2
+  ],
+  "test_cylinder": [
+   4,
+   4
+  ],
+  "test_model": [
+   7,
+   7
+  ],
+  "test_ndata": [
+   4,
+   4
+  ],
+  "test_pareto": [
+   3,
+   3
+  ],
+  "test_prng_jsonio": [
+   6,
+   6
+  ],
+  "test_search": [
+   4,
+   4
+  ],
+  "test_transport": [
+   4,
+   4
+  ],
+  "test_v110": [
+   9,
+   9
+  ],
+  "test_v120": [
+   4,
+   4
+  ],
+  "test_v140": [
+   4,
+   4
+  ],
+  "test_wad18": [
+   10,
+   10
+  ]
+ }
+}
