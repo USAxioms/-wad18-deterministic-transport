@@ -13,6 +13,7 @@ JSON tokens. This is enforced by `audit/zero_float_audit.py` over all source and
 ## Run
 
 ```sh
+./run_final.sh       # final protocol v1.4.0 only: PO1-PO5 verdicts in about 4 minutes
 ./build_capsule.sh   # 5 studies, 3 held-out cycles, nuclear data, slab and cylinder transport, 61 tests, audit (~45 min)
 ```
 
@@ -84,6 +85,7 @@ spec/research_spec_v1.3.0.json   v1.3.0 + cycle-2 held-out
 spec/research_spec_v1.4.0.json   v1.4.0 + cycle-3 held-out
 r3capsule/r3_v120.py, r3_v130.py frozen R3 of cycles 1 and 2 (hash-guarded)
 po4_multiplicity.py              exact multiplicity analysis across cycles
+run_final.sh, final_summary.py   one command for the final protocol and its verdicts
 r3capsule/ndata/                 integer-exact MATXS and ENDF-6 readers
 ndata_verify.py                  nuclear-data verification (structure, layout, closure, ENDF bounds)
 r3capsule/transport.py           integer 1-D multigroup S_N solver

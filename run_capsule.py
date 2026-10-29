@@ -17,6 +17,11 @@ def main():
     print("study v" + ver + " executed; results in " + os.path.relpath(out, ROOT))
     for k, v in sorted(res["po"].items()):
         print("  " + k + ": " + v["status"])
+    if len(sys.argv) == 1:
+        print("")
+        print("NOTE: with no arguments this replays the ORIGINAL protocol v1.0.1, kept unchanged as the")
+        print("historical record (its failures are the documented starting point). For the final")
+        print("protocol, where PO1-PO5 pass, run:  ./run_final.sh")
 
 
 if __name__ == "__main__":
