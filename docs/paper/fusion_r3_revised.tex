@@ -1,0 +1,546 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\hypersetup{
+  colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue,
+  pdftitle={Invariant-Driven Recursive Refinement for Breeding-Blanket Design},
+  pdfauthor={Michael A. Russell}
+}
+
+\title{
+\textbf{Invariant-Driven Recursive Refinement for Breeding-Blanket Design}\\[0.4em]
+\large A Preregistered, Integer-Exact Reproducibility Study on a Reduced-Order Surrogate\\[0.2em]
+\normalsize Revised manuscript, revision 5 (supersedes earlier versions)
+}
+
+\author{Michael A. Russell}
+\date{October 29, 2026 (revision 5)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We apply Russell Recursive Refinement (R$^3$) to the coupled design of a water-cooled
+liquid-breeder fusion blanket slice, trading tritium breeding ratio (TBR) against coolant
+pressure drop under eleven neutronic, thermal, structural, shielding, manufacturing, and
+inventory constraints. The investigation is implemented as a reproducibility capsule in
+which every quantity is an exact WAD-18 integer (scale $10^{18}$, floor rounding); an
+automated audit finds no floating-point use in 35 source files or 89 output files.
+Five protocol versions were each frozen before their first execution and are retained in full.
+
+Within the reduced-order surrogate model, a margin-aware search (protocol v1.1.0) identifies a design
+that raises TBR from 1.160 to 1.302 and lowers pressure drop from 20.8 to 17.6~kPa
+relative to a fixed reference, meets every declared limit with at least 5.39\% margin,
+and remains feasible and superior to the reference at all 64 corners of a six-parameter
+uncertainty box. The first protocol (v1.0.1) produced no admissible design: every
+Pareto-optimal design lay on a constraint boundary, and the safety margin had been applied
+only after the search.
+
+The original R$^3$ did not outperform NSGA-II. We therefore refined R$^3$ in three
+confirmatory cycles. Each cycle diagnosed the previous failure on development data, and each
+used a fresh held-out set that was declared before development began; the decision rule never
+changed. Cycle 1 scored 2 of 8 held-out cells (FAIL) and cycle 2 scored 5 of 8 (FAIL). Cycle 3,
+whose R$^3$ escalates to coupled two-variable moves whenever an iteration stalls, scored 7 of 8
+(PASS). Because three attempts were made, an idealised null gives about a 10\% chance of such a
+pass, so the evidence for R$^3$'s advantage is moderate rather than decisive. Physical relevance is
+not established: the model is a surrogate with unvalidated constants. Within it, proof
+obligations 1--5 now pass. An integer multigroup transport model using verified FENDL-3.2c data confirms the
+direction of the design improvement. A 1-D slab leaves the absolute TBR bracketed by the plasma-side
+boundary treatment, but an integer cylindrical model that includes the plasma chamber resolves it: TBR is 1.268
+for the reference and 1.485 for the selected design, with 3.3\% numerical uncertainty. All three designs meet
+the requirement, and the surrogate is conservative by 9--13\%. The work is not a demonstrated fusion-engineering
+advance: 3-D effects enter only through an assumed coverage factor, and no experimental benchmark has been compared.
+\end{abstract}
+
+\noindent\textbf{Keywords:} breeding blanket; tritium breeding ratio; multi-objective optimization;
+preregistration; held-out evaluation; integer-exact arithmetic; reproducibility; recursive refinement.
+
+\section{Purpose and Summary of Findings}
+
+The original manuscript set out to advance fusion engineering by applying R$^3$ to integrated
+breeding-blanket performance and to support the result with an executable capsule. It defined
+six proof obligations. This revision reports what the executed capsule established for each
+of them; the verdicts were fixed by rules declared before each execution.
+
+\begin{table}[h]
+\centering
+\caption{Proof-obligation outcomes by protocol version.}
+\label{tab:po}
+\begin{tabular}{lccccc}
+\toprule
+Obligation & v1.0.1 & v1.1.0 & v1.2.0 & v1.3.0 & v1.4.0 \\
+\midrule
+PO1 reproducible execution & PASS & PASS & PASS & PASS & PASS \\
+PO2 constraint satisfaction & FAIL$^a$ & PASS & PASS & PASS & PASS \\
+PO3 engineering improvement & FAIL$^a$ & PASS & PASS & PASS & PASS \\
+PO4 contribution of R$^3$ & FAIL & FAIL & FAIL 2/8 & FAIL 5/8 & PASS 7/8 \\
+PO5 robustness (64 corners) & FAIL$^a$ & PASS & PASS & PASS & PASS \\
+PO6 physical relevance & n.e. & n.e. & n.e. & n.e. & n.e. \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize $^a$ No design met the selection rule. PO4 in v1.2.0--v1.4.0 is decided on held-out cells (6 of 8 required).}\\
+\multicolumn{6}{l}{\footnotesize n.e.: not established.}
+\end{tabular}
+\end{table}
+
+PO1--PO5 hold in v1.4.0, with PO2, PO3 and PO5 holding \emph{within the surrogate model}. PO4 passed
+on the third confirmatory cycle, a qualification that Section~\ref{sec:mult} quantifies. PO6 cannot be
+satisfied by this capsule. These outcomes are not grounds to describe the work as a
+fusion-engineering breakthrough, and this revision does not do so.
+
+\section{The Engineering Problem}
+
+The breeding blanket breeds tritium, captures neutron energy, removes heat, shields the
+magnets, and must remain structurally sound and manufacturable. These functions compete for
+the same radial space and volume fractions. The design vector is
+\[
+d = (t_b,\ e,\ t_m,\ f_s,\ f_c,\ D),
+\]
+comprising breeding-zone thickness, Li-6 enrichment, multiplier thickness, stiffener fraction,
+coolant flow-area fraction, and tube diameter, each on a declared grid
+($31\times13\times9\times21\times17\times17\approx2.2\times10^7$ designs). The objectives are
+\[
+\max_{d\in\mathcal F} T(d), \qquad \min_{d\in\mathcal F}\Delta p(d),
+\]
+and $\mathcal F$ is defined by eleven constraints: $T\ge1.10$, $\Delta p\le200$~kPa,
+steel and breeder temperatures $\le550\,^\circ$C, tube hoop stress $\le100$~MPa, magnet
+fast-flux attenuation $\ge e^{-5.5}$, shield thickness $\ge0.10$~m, stiffener fraction above a
+depth-dependent minimum, tube ligament $\ge3$~mm, multiplier tritium inventory $\le3$~g/m$^2$,
+and coolant velocity $\le3$~m/s.
+
+\subsection{The model and its status}
+
+The model operator $y=\mathcal M(d,\theta,u)$ is a reduced-order surrogate built from
+one-dimensional saturation forms for breeding and energy capture, exponential attenuation for
+shielding, the Blasius friction and Dittus--Boelter heat-transfer correlations, and closed-form
+conduction, hoop-stress, and geometry relations. Its constants are declared, plausible
+magnitudes, not values from qualified datasets. It contains no neutron transport, nuclear-data
+library, spatial power profile, or transient analysis. Every result below is a statement about
+this model.
+
+\section{Method}
+
+\subsection{R$^3$ as implemented}
+
+R$^3=I\circ V\circ F\circ A$ is realised as a constraint-aware, Pareto-archive pattern search.
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Analyze:} select focus designs (front extremes and the largest hypervolume gap),
+  record binding constraints, and rank move directions by their recorded success.
+  \item \textbf{Refine:} propose coordinate moves at the current scale, extrapolate each design's
+  last successful move, and attempt repair combinations for promising designs that violate
+  exactly one constraint.
+  \item \textbf{Validate:} evaluate every constraint, admit only feasible non-dominated designs, and
+  check the archive invariants, including that hypervolume never decreases.
+  \item \textbf{Iterate:} keep the scale on a hypervolume gain and halve it otherwise. A fixed point
+  $\Phi(A)=A$ is reached at unit scale with no gain.
+\end{itemize}
+Version 1.1.0 added a multiscale restart rule. Version 1.2.0 added Latin-hypercube seeding~\cite{McKay1979}
+and re-seeding at local fixed points. Version 1.3.0 added \emph{neighbourhood escalation}: when the
+single-variable neighbourhood of the front is exhausted, R$^3$ proposes coupled two-variable moves and
+then recombinations of front designs before any random re-seeding. Version 1.4.0 also escalates after
+any iteration that brings no gain.
+
+\subsection{Baselines and comparison}
+
+The baselines are NSGA-II~\cite{Deb2002}, with constrained domination and crowding distance, and
+uniform random search. Every method receives the same budget of unique evaluations, and each
+starts from the reference design. Fronts are compared by exact two-dimensional hypervolume with reference point
+$(T,\Delta p)=(1.10,\,200\text{ kPa})$ and $\Delta p$ normalised to make the measure dimensionless.
+
+\subsection{Integer-exact computation}
+
+All arithmetic uses WAD-18 integers with floor rounding and signed 256-bit result bounds.
+The exponential, square root, and fractional powers ($Re^{-1/4}$, $Re^{4/5}$, $Pr^{2/5}$) are
+computed exactly to a single final floor. They match $e$, $e^{-1}$, $e^{2}$, $\sqrt2$, and
+$2^{1/4}$ to the last of 18 digits, and integer roots satisfy $r^k\le n<(r+1)^k$ by construction.
+An abstract-syntax audit rejects float literals, true division, non-integer exponents,
+approximate-numeric modules, and float tokens in every output file.
+
+\subsection{Preregistration and the evidence chain}
+
+Each protocol version was written and hashed before its first execution. Every change made
+after an execution is recorded with its effect on the results, and earlier studies are
+re-executed and byte-compared on every build. These freezes are self-attested within one
+working session; no external timestamp authority was used. Each study writes its complete
+evaluation logs, iteration records, uncertainty corners, sensitivity table, output-level
+checks, and proof-obligation verdicts, and a manifest records the SHA-256 of every file.
+
+\section{Results}
+
+\subsection{v1.0.1: optimal designs sit on constraints}
+
+R$^3$ reached a unit-scale fixed point after 874 of 1000 evaluations. Sixteen of its twenty
+front designs dominated the reference, with TBR up to about 1.36 at lower pressure drop.
+However, the predeclared selection rule required every normalised constraint slack to be at
+least 0.05, and none of these designs met it: each lay on or near the shield-attenuation,
+stiffener, multiplier-inventory, or hoop-stress limit. This is the expected behaviour of an
+unconstrained Pareto search, which drives designs onto the boundaries of the feasible set.
+Because the margin was applied only after the search, no admissible candidate existed.
+
+\subsection{v1.1.0: margin-aware search}
+
+Version 1.1.0 moved the 5\% margin into the feasibility test used during search, for every method.
+The selection rule then returned the design in Table~\ref{tab:cand}.
+
+\begin{table}[h]
+\centering
+\caption{Selected design versus reference (nominal $\theta$, surrogate model).}
+\label{tab:cand}
+\begin{tabular}{lrr}
+\toprule
+Quantity & Reference & Selected \\
+\midrule
+TBR & 1.160 & 1.302 \\
+Pressure drop (kPa) & 20.80 & 17.56 \\
+Peak steel temperature ($^\circ$C) & 412.9 & 422.2 \\
+Peak breeder temperature ($^\circ$C) & 497.1 & 519.2 \\
+Tube hoop stress (MPa) & 77.5 & 85.3 \\
+Attenuation exponent & 5.889 & 5.797 \\
+\midrule
+Design $(t_b, e, t_m, f_s, f_c, D)$ & \multicolumn{2}{r}{$(0.47\,\text{m}, 0.90, 0.05\,\text{m}, 0.105, 0.030, 11\,\text{mm})$} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The smallest constraint slack is 5.39\% (shield attenuation). Across all 64 corners of the
+uncertainty box, which perturbs breeding potential by $\pm3\%$, attenuation length by $\pm5\%$,
+multiplier gain by $\pm10\%$, friction by $\pm10\%$, heat transfer by $\pm15\%$, and breeder
+conductivity by $\pm10\%$, the design stays feasible and dominates the reference. The robustness is
+narrow, however: in the worst corner the breeder-temperature slack falls to 0.47\%. Most of the
+TBR gain comes from the 5~cm multiplier layer, which the surrogate represents generically.
+
+\subsection{Search performance, cycle 1: the original R$^3$ does not outperform NSGA-II}
+
+\begin{table}[h]
+\centering
+\caption{Hypervolume, development instance, budget 1000 (NSGA-II and random: seeds 1--5).}
+\label{tab:hv}
+\begin{tabular}{lccc}
+\toprule
+Method & v1.0.1 & v1.1.0 & v1.2.0 \\
+\midrule
+R$^3$ & 0.2642 & 0.2015 & 0.2114$^c$ \\
+NSGA-II median (min--max) & 0.2665 (0.2495--0.2710) & 0.2082 (0.1960--0.2141) & as v1.1.0 \\
+Random median & 0.1982 & 0.1299 & as v1.1.0 \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize $^c$ Single run, seed 0, on the development instance. This does not decide PO4.}
+\end{tabular}
+\end{table}
+
+For v1.2.0, R$^3$ itself was refined using R$^3$'s own cycle. A logged development harness
+evaluated 21 variants on the v1.1.0 conditions. One finding came early: a single-run
+``win'' (variant~7) vanished when the seeding seed changed, so later variants were compared
+as distributions over R$^3$'s own seeds. The chosen design, 20 Latin-hypercube points plus
+re-seeding at local fixed points, reached a development median of 0.2104 against the NSGA-II
+median of 0.2082. That margin is small, and it was selected from 21 attempts.
+
+The design was then frozen, together with a held-out test it had never seen: four instances
+(wall load $\pm20\%$, radial build $+5$~cm, breeder conductivity $-20\%$), budgets of 1000 and 2000,
+and seven new seeds per method. Table~\ref{tab:ho} gives the outcome.
+
+\begin{table}[h]
+\centering
+\caption{Cycle-1 held-out test (v1.2.0): median hypervolume over seeds 101--107.}
+\label{tab:ho}
+\begin{tabular}{lrcccc}
+\toprule
+Instance & Budget & R$^3$ & NSGA-II & Random & R$^3$ ahead \\
+\midrule
+H1 high wall load & 1000 & 0.1298 & 0.2013 & 0.1164 & no \\
+H1 high wall load & 2000 & 0.1818 & 0.2039 & 0.1343 & no \\
+H2 low wall load & 1000 & 0.2009 & 0.2164 & 0.1459 & no \\
+H2 low wall load & 2000 & 0.2009 & 0.2194 & 0.1541 & no \\
+H3 wider radial build & 1000 & 0.2384 & 0.2433 & 0.1780 & no \\
+H3 wider radial build & 2000 & 0.2494 & 0.2493 & 0.1910 & yes \\
+H4 low breeder conductivity & 1000 & 0.1475 & 0.2022 & 0.1246 & no \\
+H4 low breeder conductivity & 2000 & 0.2084 & 0.2063 & 0.1413 & yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+R$^3$ led NSGA-II in 2 of 8 cells, against the 6 the rule required, so cycle 1 failed. R$^3$ led
+random search in all 8 cells. Its median in H2 is unchanged between budgets of 1000 and 2000,
+which indicates stagnation rather than slow convergence.
+
+\subsection{Cycles 2 and 3: diagnosing and removing the stagnation}
+
+The cycle-1 cells then became development data. Their iteration logs showed the cause of the
+stagnation: after roughly 900 evaluations, every one-variable neighbour of the front had already
+been evaluated. R$^3$ made no new evaluations and fell back on random re-seeding. The variables are
+coupled (breeder and multiplier compete for radial space; coolant fraction and tube diameter interact),
+so the front was optimal only against one-variable moves.
+
+Neighbourhood escalation (v1.3.0) addressed this. A competing hypothesis, refining the least-violating
+infeasible designs, was tested and refuted (0 of 9 development cells); it is retained in the log.
+Cycle 2 scored 5 of 8 on a new held-out set (H5--H8: lower coverage, a longer coolant path,
+pessimistic nuclear parameters, and a hotter, lower-conductivity case; budgets 1500 and 3000;
+seeds 201--207). One of its losses was an exact tie, which the unchanged rule counts against R$^3$.
+
+The cycle-2 cells again became development data. Their logs showed long plateaus during which
+untested neighbours existed but none improved the front, so escalation fired late. Version 1.4.0 escalates after
+any non-improving iteration. Its held-out set (H9--H12) was declared before cycle-3 development began.
+The outcome is given in Table~\ref{tab:ho3}.
+
+\begin{table}[h]
+\centering
+\caption{Cycle-3 held-out test (v1.4.0): median hypervolume over seeds 301--307.}
+\label{tab:ho3}
+\begin{tabular}{lrcccc}
+\toprule
+Instance & Budget & R$^3$ & NSGA-II & Random & R$^3$ ahead \\
+\midrule
+H9 enrichment cost $+40\%$ & 1200 & 0.2059 & 0.2039 & 0.1234 & yes \\
+H9 enrichment cost $+40\%$ & 2500 & 0.2069 & 0.2069 & 0.1445 & tie (no) \\
+H10 thinner manifold & 1200 & 0.2353 & 0.2268 & 0.1653 & yes \\
+H10 thinner manifold & 2500 & 0.2380 & 0.2350 & 0.1730 & yes \\
+H11 weaker heat transfer & 1200 & 0.2089 & 0.2062 & 0.1342 & yes \\
+H11 weaker heat transfer & 2500 & 0.2132 & 0.2092 & 0.1533 & yes \\
+H12 lower load, shorter $\lambda_0$ & 1200 & 0.2367 & 0.2245 & 0.1568 & yes \\
+H12 lower load, shorter $\lambda_0$ & 2500 & 0.2383 & 0.2291 & 0.1757 & yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+R$^3$ led in 7 of 8 cells, so PO4 passes. In 3 cells the R$^3$ median exceeded the \emph{best}
+NSGA-II seed, and in 3 cells all seven R$^3$ seeds exceeded the NSGA-II median.
+
+\subsection{How strong is the PO4 pass?}
+\label{sec:mult}
+
+The pass came on the third attempt. Suppose each cell were a fair coin with cells independent, an
+idealisation since cells share instances. A single cycle would then reach at least 7 of 8 with
+probability $9/256$, and at least one of three cycles would do so with probability
+$1-(247/256)^3 = 1707993/16777216 \approx 0.102$. At the seed level, 41 of 56 cycle-3 R$^3$ seeds
+beat the NSGA-II median, a tail probability of about $3.4\times10^{-4}$, but seeds within a cell are not
+independent, so this overstates the evidence. We read the result as moderate evidence that
+escalating R$^3$ is competitive with or better than NSGA-II on this problem family. It does not
+show general superiority.
+
+\subsection{The design selected by v1.4.0}
+
+Run on the development instance, the v1.4.0 R$^3$ selects $(0.46\,\text{m}, 0.90, 0.05\,\text{m}, 0.105, 0.030, 11\,\text{mm})$,
+which differs from the v1.1.0 design only in breeder thickness. It gives TBR 1.295, $\Delta p$ 18.19~kPa and a
+minimum nominal slack of 5.19\%, and it remains feasible and dominating at all 64 corners. Its worst-corner
+breeder-temperature slack, however, is only 0.0072\%. On robustness grounds the v1.1.0 design
+(worst-corner slack 0.47\%, Table~\ref{tab:cand}) is preferable. A better optimizer does not by itself
+yield a more robust design while the selection rule considers only nominal margins.
+
+\section{Transport Check with Evaluated Nuclear Data}
+\label{sec:transport}
+
+\paragraph{Data.} FENDL-3.2c multigroup libraries (NJOY2016, 211 neutron groups, 293.6~K) for all 21 nuclides
+of the model (H-1, O-16, Li-6/7, Be-9, Cr-50/52/53/54, Fe-54/56/57/58, W-182/183/184/186 and
+Pb-204/206/207/208) are read by integer-exact readers. Every library passes four checks:
+\begin{itemize}[leftmargin=1.2em]
+  \item exact word counts;
+  \item elastic transfer out of each group equal to the elastic cross section within 0.1\% below 20~MeV, which
+  also fixes the storage layout empirically;
+  \item a total cross section equal to the sum of its neutron-emitting and pure-absorption reactions within
+  10~ppm;
+  \item group values within the weight-independent bounds of the corresponding pointwise ENDF-6 evaluations
+  (outside resonance ranges and above 100~eV).
+\end{itemize}
+The Legendre normalisation and (n,2n) multiplicity were verified from the data rather than assumed.
+
+\paragraph{Solver.} A 1-D slab S$_8$ step-characteristic solver with P$_3$ scattering, written entirely in
+WAD-18 integers, solves the 211-group problem with a 14.1~MeV source on the plasma side.
+\begin{itemize}[leftmargin=1.2em]
+  \item \emph{Verification.} It reproduces analytic pure-absorber transmission to $10^{-18}$, and it conserves
+  neutrons to $10^{-10}$ or better in every run.
+  \item \emph{Convergence.} At the chosen resolution, angular and Legendre truncation contribute below 0.15\%.
+  Halving the mesh resolution changes TBR by 1.4\%, which we attach as the numerical uncertainty.
+\end{itemize}
+Assumptions the surrogate never stated are declared in a separate specification: material densities, a
+beryllium multiplier, and the manifold and shield compositions.
+
+\paragraph{Boundary condition.} The declared vacuum plasma-side boundary gave a reference TBR of 0.45. In that
+run, 109\% of the incident current left through the front face: Pb(n,2n) multiplication combined with slow
+moderation in lead. In a torus those neutrons re-enter the blanket elsewhere. We therefore added a white
+(isotropic re-entry) boundary \emph{after} seeing this result, and we report the two as bounds.
+
+\paragraph{Pre-declared questions.} Four questions were fixed before any non-reference design was computed.
+Table~\ref{tab:tr} gives the outcome.
+
+\begin{table}[h]
+\centering
+\caption{TBR (including coverage 0.82): surrogate versus transport bounds.}
+\label{tab:tr}
+\begin{tabular}{lccc}
+\toprule
+Design & Surrogate & Transport, vacuum & Transport, white \\
+\midrule
+Reference & 1.160 & 0.453 & 1.300 \\
+v1.1.0 selected & 1.302 & 0.575 & 1.522 \\
+v1.4.0 selected & 1.295 & 0.574 & 1.520 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Direction (AGREE).} Transport confirms that both selected designs breed more than the reference,
+  by 17\% (white) to 27\% (vacuum), far beyond the numerical uncertainty.
+  \item \textbf{Magnitude (NO).} The surrogate's gain of about 12\% lies below that range: it undervalues the
+  beryllium layer.
+  \item \textbf{Requirement (DEPENDS ON BOUNDARY).} Whether TBR $\ge 1.155$ holds depends on the boundary
+  treatment.
+  \item \textbf{Calibration.} Every surrogate value lies inside the transport bounds.
+\end{itemize}
+
+\paragraph{Cylindrical model.} The slab cannot represent the plasma chamber, so we built a 1-D cylindrical
+discrete-ordinates solver, again entirely in WAD-18 integers.
+\begin{itemize}[leftmargin=1.2em]
+  \item \emph{Geometry.} A plasma region of radius 2.9~m carries a uniform 14.1~MeV source. The first wall is
+  at 3.1~m, followed by the same layers and materials as before. Neutrons leaving the blanket front cross the
+  chamber and re-enter on the far side.
+  \item \emph{Numerics.} Step differencing in space and angle keeps the scheme positive and exactly conservative.
+  \item \emph{Verification.} The solver reproduces an exactly flat flux in an infinite medium (12 digits, zero
+  current), and it conserves neutrons to $10^{-13}$.
+\end{itemize}
+Its numerical uncertainty is $U = 3.3\%$, dominated by the mesh. Questions and rules were again fixed before
+any cylindrical blanket run (Table~\ref{tab:cyl}).
+
+\begin{table}[h]
+\centering
+\caption{TBR (including coverage 0.82) in the cylindrical model, with the slab bracket.}
+\label{tab:cyl}
+\begin{tabular}{lccc}
+\toprule
+Design & Surrogate & Slab bracket & Cylinder \\
+\midrule
+Reference & 1.160 & 0.453--1.300 & 1.268 \\
+v1.1.0 selected & 1.302 & 0.575--1.522 & 1.485 \\
+v1.4.0 selected & 1.295 & 0.574--1.520 & 1.483 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Bracket.} Every cylinder value lies inside its slab bracket.
+  \item \textbf{Direction (AGREE).} The selected designs gain 17\%, about five times $U$.
+  \item \textbf{Requirement (MET).} All three designs meet TBR $\ge 1.155$ by more than $U$.
+  \item \textbf{Surrogate.} It underestimates TBR by 8.5--12.7\%, and its predicted gain falls outside
+  $\pm U$ of the computed one.
+  \item \textbf{Geometry sensitivity.} Moving the first wall from 2.5~m to 4.0~m changes the reference TBR by
+  only $\pm0.1\%$.
+\end{itemize}
+
+The design direction found by the search is therefore supported by evaluated physics, and within this model
+the requirement is met. What remains open is three-dimensional: the coverage factor (0.82, assumed), the first
+wall (absent from every model here), ports and the divertor.
+
+\section{Discussion}
+
+\paragraph{What is established.}
+Within the stated surrogate, the capsule establishes three things. First, there are designs that
+improve both objectives over the reference while carrying a uniform safety margin and surviving the
+declared uncertainty box. Second, every reported number regenerates byte-identically from the frozen
+inputs. Third, no floating-point arithmetic is used anywhere in the capsule's own code or outputs.
+
+\paragraph{What the failures teach.}
+The v1.0.1 failure shows that a safety margin applied after optimization is the wrong place for it.
+Pareto optimality pushes designs onto constraint boundaries, so margins belong inside the search.
+The cycle-1 failure shows why a held-out evaluation is necessary: refinements tuned on a single
+development problem produced an edge that did not transfer. The improvements that did transfer
+(cycles 2 and 3) came from diagnosing a mechanism, neighbourhood exhaustion and stalled plateaus,
+rather than from adjusting parameters.
+
+\paragraph{Recursive refinement of the study itself.}
+The evidence process was itself refined recursively, through cycles of
+analysis, revision, validation, and iteration. Each cycle produced a frozen protocol, an executed
+result, and a logged revision. The process stops being informative if its acceptance criteria are
+relaxed after the results are seen, so no criterion was changed after its study ran.
+
+\section{Limitations}
+
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Surrogate model.} The search uses the surrogate, whose constants are unvalidated.
+  Section~\ref{sec:transport} checks only its TBR, in 1-D, and there is no spatial power profile, transient,
+  corrosion, or irradiation-embrittlement modelling. Tritium
+  recovery enters only through the required TBR, and no plant-level net-electric claim is made.
+  \item \textbf{Statistical scale and multiplicity.} Each held-out cycle used seven seeds per method on one problem
+  family, and PO4 passed on the third cycle (Section~\ref{sec:mult}). All three held-out sets are now
+  used; any further claim requires new held-out conditions.
+  \item \textbf{Nominal-margin selection.} The selection rule considers only nominal margins, which allowed a
+  design with very small worst-corner slack (v1.4.0). Selecting on worst-corner slack is an obvious next protocol change.
+  \item \textbf{Self-attested preregistration.} The freeze records and their hashes are internal to the capsule.
+  \item \textbf{Reproduction scope.} Reproduction has been same-machine and self-executed. Independent third-party
+  reproduction has not yet taken place.
+\end{itemize}
+
+\section{Path to Physical Relevance (PO6)}
+
+The capsule isolates the model operator in one module, so the search, constraint, comparison,
+uncertainty, and evidence machinery are unchanged when the model is replaced. Establishing PO6
+requires three things. The first is a Monte Carlo transport model of the candidate and reference geometries
+(e.g.\ OpenMC, as used for WCLL TBR studies~\cite{Chiletti2026}). The 1-D check of Section~\ref{sec:transport}
+and the cylindrical model narrow what remains: the coverage factor, the first wall, and 3-D features. A
+Monte Carlo code is one route; it need not use floating point, since a seeded integer generator makes it as
+reproducible as the rest of the capsule. Validation still requires comparison with measured tritium production,
+for example from blanket mock-up experiments. The second is thermal-hydraulic
+analysis at the fidelity reviewed in~\cite{Seo2021}. The third is comparison against benchmark or experimental data
+relevant to the materials and conditions. Only then could PO2, PO3, and PO5 be read as statements about a
+physical blanket rather than about the surrogate.
+
+\section{Conclusion}
+
+The executed study does not demonstrate a nuclear-fusion engineering advance. It provides a
+complete, integer-exact, preregistered and byte-reproducible evidence chain. Within a declared surrogate
+model, that chain establishes a margin-carrying, uncertainty-robust design improvement, which integer transport calculations with evaluated nuclear data confirm in
+direction and show to meet the TBR requirement in 1-D cylindrical geometry. After three
+disclosed confirmatory cycles, it also provides moderate held-out evidence that an escalating R$^3$
+outperforms NSGA-II on this problem family. Every failure along the way is recorded rather than
+concealed. The next step that could
+turn the model-internal result into an engineering one is replacing the surrogate with validated
+transport and thermal-hydraulic analysis.
+
+\section*{Data and Code Availability}
+The reproducibility capsule (\texttt{fusion\_r3\_capsule}) contains all specifications, source
+code, logs, results, freeze records, the development log, and a SHA-256 manifest. It needs only the
+Python standard library and is rebuilt with \texttt{./build\_capsule.sh}.
+
+\begin{thebibliography}{99}
+
+\bibitem{DOE2025}
+U.S. Department of Energy.
+\textit{Fusion Science and Technology Roadmap}. 2025.
+\url{https://www.energy.gov/sites/default/files/2025-10/fusion-s%26t-roadmap-101625.pdf}.
+
+\bibitem{Chiletti2026}
+M. Chiletti, N. Rebiai, D. Mazed, and F. G\'erardin.
+Predictive modelling of tritium breeding ratio (TBR) in EU DEMO WCLL blankets: OpenMC
+simulations and analytical insights.
+\textit{Fusion Engineering and Design}, 222, 115516, 2026.
+doi:10.1016/j.fusengdes.2025.115516.
+
+\bibitem{Seo2021}
+S. B. Seo et al.
+A review of thermal hydraulics systems analysis for breeding blanket design and future needs
+for fusion engineering demonstration facility design and licensing.
+\textit{Fusion Engineering and Design}, 172, 112769, 2021.
+doi:10.1016/j.fusengdes.2021.112769.
+
+\bibitem{IAEA2025}
+International Atomic Energy Agency.
+Technical Meeting on Tritium Breeding Blankets and Associated Neutronics. 2025.
+\url{https://conferences.iaea.org/event/406/}.
+
+\bibitem{Deb2002}
+K. Deb, A. Pratap, S. Agarwal, and T. Meyarivan.
+A fast and elitist multiobjective genetic algorithm: NSGA-II.
+\textit{IEEE Transactions on Evolutionary Computation}, 6(2):182--197, 2002.
+
+\bibitem{McKay1979}
+M. D. McKay, R. J. Beckman, and W. J. Conover.
+A comparison of three methods for selecting values of input variables in the analysis of
+output from a computer code.
+\textit{Technometrics}, 21(2):239--245, 1979.
+
+\end{thebibliography}
+
+\end{document}
