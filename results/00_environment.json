@@ -1,0 +1,9 @@
+{
+ "capsule": "fusion-blanket-r3-capsule",
+ "capsule_version": "1.0.0",
+ "dependencies": "Python standard library only",
+ "implementation": "CPython",
+ "machine": "x86_64",
+ "python": "3.12.3",
+ "system": "Linux"
+}
