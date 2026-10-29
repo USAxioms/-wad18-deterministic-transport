@@ -1,0 +1,285 @@
+{
+ "note": "Every nuclear-data file supplied by the author. Bundled files are used by ndata_verify.py (all) and the transport model (MATXS). 03Li006.gam and 03Li006_1.gam are byte-identical PENDF files for Li-6 and are not used.",
+ "files": [
+  {
+   "file": "01H_001.m",
+   "bytes": 1955854,
+   "sha256": "c3a888cca44a76bdc8f61e1429a08547f4f83ff533b9dfbe39767c6f37ca0809",
+   "bundled": true,
+   "first_line": "0v   matxs *        h1      *     1"
+  },
+  {
+   "file": "03Li006.gam",
+   "bytes": 119637,
+   "sha256": "02d95d8643848cf1d7931f6af02e5484a3e7b4e19f5fd1c8fe873f8ef280f277",
+   "bundled": false,
+   "first_line": "PENDF for 03-Li-6                                                    1"
+  },
+  {
+   "file": "03Li006.m",
+   "bytes": 3110884,
+   "sha256": "00830d76f45af944363aa5732ba9e09792032fb6b457c72b0305a67cf18abf56",
+   "bundled": true,
+   "first_line": "0v   matxs *        li6     *     1"
+  },
+  {
+   "file": "03Li006_1.gam",
+   "bytes": 119637,
+   "sha256": "02d95d8643848cf1d7931f6af02e5484a3e7b4e19f5fd1c8fe873f8ef280f277",
+   "bundled": false,
+   "first_line": "PENDF for 03-Li-6                                                    1"
+  },
+  {
+   "file": "03Li007.m",
+   "bytes": 2979411,
+   "sha256": "5654d467b8e8746f1b0a702e184ce845a32ea18b06ef59659ea1186416a63d61",
+   "bundled": true,
+   "first_line": "0v   matxs *        li7     *     1"
+  },
+  {
+   "file": "04Be009.m",
+   "bytes": 2951392,
+   "sha256": "7f48d5a1c1ffa75cfed5a23f464842ee5368454deed305ae02795184c70a0a4f",
+   "bundled": true,
+   "first_line": "0v   matxs *        be9     *     1"
+  },
+  {
+   "file": "08O_016.m",
+   "bytes": 3882276,
+   "sha256": "179eed856358c2e4f28f0e787e66e7714c0ff32821cabd3ae7a6b4aa1a7ecd51",
+   "bundled": true,
+   "first_line": "0v   matxs *        o16     *     1"
+  },
+  {
+   "file": "24Cr050.m",
+   "bytes": 10632383,
+   "sha256": "a5cd4c7674ffd93024321fc2c04c26697a1cb9c46d7937b2b5038c4565333dc6",
+   "bundled": true,
+   "first_line": "0v   matxs *        cr50    *     1"
+  },
+  {
+   "file": "24Cr052.m",
+   "bytes": 9311481,
+   "sha256": "0bde770f8052e11c535c3b4b27da27eed9074764852d5c3c523a68398c4ac979",
+   "bundled": true,
+   "first_line": "0v   matxs *        cr52    *     1"
+  },
+  {
+   "file": "24Cr053.m",
+   "bytes": 8946735,
+   "sha256": "a1f72809847cb04fb49e6e5fab2035b190c212258e37180696ad1b0586b5373c",
+   "bundled": true,
+   "first_line": "0v   matxs *        cr53    *     1"
+  },
+  {
+   "file": "24Cr054.m",
+   "bytes": 9658895,
+   "sha256": "aeed4f76d6fe6481606aece026258f816ee4cd0910756e67860a3d45dcab35bb",
+   "bundled": true,
+   "first_line": "0v   matxs *        cr54    *     1"
+  },
+  {
+   "file": "26Fe054.m",
+   "bytes": 5675390,
+   "sha256": "e608119e46397fb1fda28c60de7a64314270900271f70326a9743117d7b7d19c",
+   "bundled": true,
+   "first_line": "0v   matxs *        fe54    *     1"
+  },
+  {
+   "file": "26Fe056.m",
+   "bytes": 6930844,
+   "sha256": "a3312a3acabca04db165d5431db8ae9bb5e1b62d92484568e2b0de9a62c77638",
+   "bundled": true,
+   "first_line": "0v   matxs *        fe56    *     1"
+  },
+  {
+   "file": "26Fe057.m",
+   "bytes": 5950826,
+   "sha256": "afb43b55623917196feb1a5b81179764e6d5509c2bb00bc624f4c81a6f4abc89",
+   "bundled": true,
+   "first_line": "0v   matxs *        fe57    *     1"
+  },
+  {
+   "file": "26Fe058.m",
+   "bytes": 6342914,
+   "sha256": "70bc36a1b66c89479c8c83c05b352825ac21818ae9eb8be998304c4e3a4bcf6e",
+   "bundled": true,
+   "first_line": "0v   matxs *        fe58    *     1"
+  },
+  {
+   "file": "74W_182.m",
+   "bytes": 8204467,
+   "sha256": "28b42bde17574a9c0819c3df97113a04629ca744355740c0a124de8b8b70acb5",
+   "bundled": true,
+   "first_line": "0v   matxs *        w182    *     1"
+  },
+  {
+   "file": "74W_183.m",
+   "bytes": 8738572,
+   "sha256": "3c70d8940bb5820610f4217c179c984950ecf2ee29d0eff869fcfe9cbf37d4b7",
+   "bundled": true,
+   "first_line": "0v   matxs *        w183    *     1"
+  },
+  {
+   "file": "74W_184.m",
+   "bytes": 7937157,
+   "sha256": "a6c741141e0cba32d9512c31ba2b75df0f0ae6674636e394d2c12644c8674632",
+   "bundled": true,
+   "first_line": "0v   matxs *        w184    *     1"
+  },
+  {
+   "file": "74W_186.m",
+   "bytes": 8065260,
+   "sha256": "58cc2d05f03ac5b9bba4992bc06f8bc50baa07ddca94b05dd3abece566a12446",
+   "bundled": true,
+   "first_line": "0v   matxs *        w186    *     1"
+  },
+  {
+   "file": "82Pb204.m",
+   "bytes": 6862173,
+   "sha256": "68a34a8d2ef4eb080a8055166c3b5a786dd1dcc5ac45b0ca9ded2a553d5fb98c",
+   "bundled": true,
+   "first_line": "0v   matxs *        pb204   *     1"
+  },
+  {
+   "file": "82Pb206.m",
+   "bytes": 5917429,
+   "sha256": "2374a480476928d48ae982ad321f8f4f51d1f600e6ed0c3111ac15303524af95",
+   "bundled": true,
+   "first_line": "0v   matxs *        pb206   *     1"
+  },
+  {
+   "file": "82Pb207.m",
+   "bytes": 5755742,
+   "sha256": "7753790fb0eca10483f04514b91da47d9bbbe815a6164d48ff1fce38c974ae26",
+   "bundled": true,
+   "first_line": "0v   matxs *        pb207   *     1"
+  },
+  {
+   "file": "82Pb208.m",
+   "bytes": 5365115,
+   "sha256": "d0eae08ec0adec8e7bf5717d1a20195c2d3b25594f6ab1d9e3b63e99ca181e5d",
+   "bundled": true,
+   "first_line": "0v   matxs *        pb208   *     1"
+  },
+  {
+   "file": "n_0325_3-Li-6.endf",
+   "bytes": 1432890,
+   "sha256": "1e9107188210dbbe59170c433f30bffaa2d1789afaf674f6c8ed4957e895cf29",
+   "bundled": true,
+   "first_line": "FENDL-3.0                                                            0"
+  },
+  {
+   "file": "n_0328_3-Li-7.endf",
+   "bytes": 1066446,
+   "sha256": "451ee0cf6caa49b67be96bb24385a8e424332ed5285514985e16beddb30f51d3",
+   "bundled": true,
+   "first_line": "FENDL-3.0                                                            0"
+  },
+  {
+   "file": "n_0425_4-Be-9.endf",
+   "bytes": 1961739,
+   "sha256": "caefce3b6c6498079a346a4f0ca55ec9f08dd24351fe72b3e5dfcc3e365f69e0",
+   "bundled": true,
+   "first_line": "FENDL-3.0                                                            0"
+  },
+  {
+   "file": "n_2425_24-Cr-50.endf",
+   "bytes": 10104428,
+   "sha256": "2805b0e7bdad41e05bd6895cd6c1a3601c9615d9b534e39013a0e92f167b976b",
+   "bundled": true,
+   "first_line": "Cr-50 evaluation adopted for FENDL-3.2a library                      1"
+  },
+  {
+   "file": "n_2431_24-Cr-52.endf",
+   "bytes": 9486396,
+   "sha256": "684632c08504c935c1b3da0c8a98a5c1cba2255e341eaa4775feddcb196065d2",
+   "bundled": true,
+   "first_line": "Cr-52 evaluation adopted for FENDL-3.2a library                      1"
+  },
+  {
+   "file": "n_2434_24-Cr-53.endf",
+   "bytes": 8897852,
+   "sha256": "e3826d1294b3739f320f5d3a6b55c0e06aada04a4b59d265239e8298b8f9ac75",
+   "bundled": true,
+   "first_line": "Cr-53 evaluation adopted for FENDL-3.2a library                      1"
+  },
+  {
+   "file": "n_2437_24-Cr-54.endf",
+   "bytes": 9020820,
+   "sha256": "93df3576170d02ada06008591b3eebbff241f8ff90182840a9df94c32cbc7664",
+   "bundled": true,
+   "first_line": "Cr-54 evaluation adopted for FENDL-3.2a library                      1"
+  },
+  {
+   "file": "n_2625_26-Fe-54.endf",
+   "bytes": 16469002,
+   "sha256": "78f862ea205c3655a9347db105005f0fdac71394c79073c482a1e1f48fdb8da9",
+   "bundled": true,
+   "first_line": "Fe-54 evaluation adopted for FENDL-3.2a library                      1"
+  },
+  {
+   "file": "n_2631_26-Fe-56.endf",
+   "bytes": 18643933,
+   "sha256": "24a45021fb38262dd8fb598c520a807f342bd07e137a36e88d7ae97a0f38715e",
+   "bundled": true,
+   "first_line": "Fe-56 evaluation adopted for FENDL-3.2a library                   7777"
+  },
+  {
+   "file": "n_2634_26-Fe-57.endf",
+   "bytes": 13671322,
+   "sha256": "8a3e5566979b1324b13bf2822f712203b791a37b6d81e60f1f2fcd39b91ddeed",
+   "bundled": true,
+   "first_line": "Fe-57 evaluation adopted for FENDL-3.2a library                      1"
+  },
+  {
+   "file": "n_2637_26-Fe-58.endf",
+   "bytes": 9890667,
+   "sha256": "c5379fc72eb20c5fdaeeb350d77f6e9d0f1cb9267f55de89d650f01951ec2b01",
+   "bundled": true,
+   "first_line": "Fe-58 from ENDF/B-VIII.0 adopted for FENDL-3.2a                      1"
+  },
+  {
+   "file": "n_7431_74-W-182.endf",
+   "bytes": 10821488,
+   "sha256": "c3dc8fca21cf66eb681ce40553b839c532bf3180a76ea5faff68496b504a3a4d",
+   "bundled": true,
+   "first_line": "$Rev:: 1451     $  $Date:: 2018-01-17#$                             1 "
+  },
+  {
+   "file": "n_7434_74-W-183.endf",
+   "bytes": 10795572,
+   "sha256": "a250d937b3f0f69eddd85613878a5ed0fa851cb200a30373cf28c87fc1f0ce83",
+   "bundled": true,
+   "first_line": "$Rev:: 1451     $  $Date:: 2018-01-17#$                             1 "
+  },
+  {
+   "file": "n_7437_74-W-184.endf",
+   "bytes": 7588752,
+   "sha256": "a550106ce756908041fbaa0d55f1d9ea595e4901908ab39e8be35fd117c9fc90",
+   "bundled": true,
+   "first_line": "$Rev:: 1451     $  $Date:: 2018-01-17#$                             1 "
+  },
+  {
+   "file": "n_7443_74-W-186.endf",
+   "bytes": 7970880,
+   "sha256": "bf6bf3bb7a1583be49ae8aab865e75d256e0965f969f38a14d63260b3f4a8744",
+   "bundled": true,
+   "first_line": "$Rev:: 1451     $  $Date:: 2018-01-17#$                             1 "
+  },
+  {
+   "file": "n_8225_82-Pb-204.endf",
+   "bytes": 2405133,
+   "sha256": "ca70f48efbbeee1f209cada5a7081e7206ed7e907b4614699e1d6b6d97996ec9",
+   "bundled": true,
+   "first_line": "JEFF-3.1.1 general purpose neutron file update release Jan. 2009  2311"
+  },
+  {
+   "file": "n_8231_82-Pb-206.endf",
+   "bytes": 2430324,
+   "sha256": "c129b0d9cc5f61458ec2505fd7ac80a921d01116c54ede32afbd1673fe015ef0",
+   "bundled": true,
+   "first_line": "JEFF-3.1.1 general purpose neutron file update release Jan. 2009  2311"
+  }
+ ]
+}
