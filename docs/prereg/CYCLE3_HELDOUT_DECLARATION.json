@@ -1,0 +1,14 @@
+{
+ "declared": "before any cycle-3 R3 development run (after the cycle-2 held-out result, which is now development data)",
+ "purpose": "Held-out conditions for confirming the cycle-3 R3 design (protocol v1.4.0). Not used for development.",
+ "instances": [
+  {"name": "H9_high_enrichment_cost", "constants": {"k_enrich": "0.14"}, "theta": {}},
+  {"name": "H10_thin_manifold", "constants": {"t_manifold": "0.12"}, "theta": {}},
+  {"name": "H11_weak_heat_transfer", "constants": {}, "theta": {"nu_coeff": "0.020", "fric_coeff": "0.34"}},
+  {"name": "H12_short_attenuation", "constants": {"wall_load": "900000"}, "theta": {"lambda0": "0.17"}}
+ ],
+ "budgets": [1200, 2500],
+ "seeds": [301, 302, 303, 304, 305, 306, 307],
+ "rule": "PASS iff median HV(R3) > median HV(NSGA-II) in at least 6 of 8 cells; STRONG iff additionally median HV(R3) > max HV(NSGA-II) in at least 6 of 8 cells; otherwise FAIL. Unchanged from cycles 1-2; ties count against R3.",
+ "multiplicity_note": "Third confirmatory cycle. Cycle 1 (H1-H4) failed 2/8; cycle 2 (H5-H8) failed 5/8. Both are now development data."
+}
