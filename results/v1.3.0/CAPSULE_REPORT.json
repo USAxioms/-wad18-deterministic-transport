@@ -1,0 +1,84 @@
+{
+ "R3_evaluations": 1000,
+ "R3_stop_reason": "BUDGET",
+ "arithmetic": "WAD-18 pure integer; see results/zero_float_audit.json",
+ "capsule": "fusion-blanket-r3-capsule",
+ "front_designs_dominating_reference_nominal": 8,
+ "front_designs_meeting_selection_rule": 1,
+ "hypervolume": {
+  "NSGA2_min_median_max": [
+   "0.195982004936059637",
+   "0.208245845255379326",
+   "0.214107675253899371"
+  ],
+  "R3": "0.208529645607884278",
+  "R3_rank_among_all_runs": 3,
+  "RANDOM_min_median_max": [
+   "0.110737981520642929",
+   "0.129937064295187681",
+   "0.137945395899606731"
+  ],
+  "total_runs": 11
+ },
+ "model_class": "REDUCED_ORDER_SURROGATE",
+ "no_single_overall_status": "Deliberately omitted: per-obligation outcomes must not be collapsed into one PASS/FAIL string.",
+ "output_checks_all_ok": true,
+ "proof_obligations": {
+  "PO1_reproducible_execution": {
+   "files_compared": 14,
+   "files_identical": 14,
+   "scope": "Same-machine re-execution by the capsule itself. Independent third-party reproduction is a separate step not performed here.",
+   "status": "PASS"
+  },
+  "PO2_constraint_satisfaction": {
+   "min_normalised_slack": "0.051933289086832066",
+   "scope": "nominal theta, surrogate model",
+   "status": "PASS"
+  },
+  "PO3_engineering_improvement": {
+   "dp_candidate": "18193.098369786109886486",
+   "dp_reference": "20797.644947894205371313",
+   "scope": "nominal theta, surrogate model",
+   "status": "PASS",
+   "tbr_candidate": "1.294721435308657123",
+   "tbr_reference": "1.160212082166137517"
+  },
+  "PO4_contribution_of_R3": {
+   "cells_r3_median_beats_nsga2_median": 5,
+   "cells_total": 8,
+   "decided_on": "held-out cells",
+   "development_instance_single_run": {
+    "R3_evaluations_used": 1000,
+    "R3_stop_reason": "BUDGET",
+    "hv_NSGA2_max": "0.214107675253899371",
+    "hv_NSGA2_median": "0.208245845255379326",
+    "hv_R3": "0.208529645607884278",
+    "hv_RANDOM_median": "0.129937064295187681",
+    "note": "R3 is deterministic (single run); baselines are 5 seeds each. Small-sample comparison.",
+    "status": "SEE_HELDOUT"
+   },
+   "heldout_byte_identical_rerun": true,
+   "status": "FAIL"
+  },
+  "PO5_robustness": {
+   "corners": 64,
+   "dominates_reference": 64,
+   "feasible": 64,
+   "feasible_and_dominates": 64,
+   "status": "PASS"
+  },
+  "PO6_physical_relevance": {
+   "detail": "Reduced-order surrogate correlations with declared, unvalidated constants. No Monte Carlo transport (e.g. OpenMC), CFD, benchmark, or experimental comparison was performed. No claim about a physical blanket follows from this capsule.",
+   "status": "NOT_ESTABLISHED"
+  }
+ },
+ "reference": {
+  "dp": "20797.644947894205371313",
+  "tbr": "1.160212082166137517"
+ },
+ "tests": {
+  "failed": 0,
+  "passed": 49
+ },
+ "version": "1.0.0"
+}
