@@ -1,0 +1,93 @@
+{
+ "PO1_status": "PASS",
+ "byte_identical_rerun": true,
+ "files_compared": 14,
+ "identical": 14,
+ "rows": [
+  {
+   "file": "00_environment.json",
+   "identical": true,
+   "recorded_sha256": "7e528461f7ecb41053dc4e8634d5dcb2c7226103530aa0d0bb341fa317253365",
+   "rerun_sha256": "7e528461f7ecb41053dc4e8634d5dcb2c7226103530aa0d0bb341fa317253365"
+  },
+  {
+   "file": "01_spec_validation.json",
+   "identical": true,
+   "recorded_sha256": "443569c8e0ed0280795e2085365574bdba1752d778d476adf114674d3d758557",
+   "rerun_sha256": "443569c8e0ed0280795e2085365574bdba1752d778d476adf114674d3d758557"
+  },
+  {
+   "file": "02_frozen_protocol.json",
+   "identical": true,
+   "recorded_sha256": "e134d5151eeafa582cef4b5d41ed2c9f1858caf63c15683497b701b7868c620e",
+   "rerun_sha256": "e134d5151eeafa582cef4b5d41ed2c9f1858caf63c15683497b701b7868c620e"
+  },
+  {
+   "file": "03_reference_evaluation.json",
+   "identical": true,
+   "recorded_sha256": "c6afff15a6f27be037d28d3cb383e424104a8043ad09a0cec95df5a5b7a30b2d",
+   "rerun_sha256": "c6afff15a6f27be037d28d3cb383e424104a8043ad09a0cec95df5a5b7a30b2d"
+  },
+  {
+   "file": "04_r3_evaluations.jsonl",
+   "identical": true,
+   "recorded_sha256": "1b9e280e6293886ddffa2a63ddb484cc0ab69fc2ee002f665309ccaaf8bd92f9",
+   "rerun_sha256": "1b9e280e6293886ddffa2a63ddb484cc0ab69fc2ee002f665309ccaaf8bd92f9"
+  },
+  {
+   "file": "05_r3_iterations.json",
+   "identical": true,
+   "recorded_sha256": "65a0ef140bd7ae4d9b761a883812e103c637ab5f17fa6174fdad31d4eb2ce22f",
+   "rerun_sha256": "65a0ef140bd7ae4d9b761a883812e103c637ab5f17fa6174fdad31d4eb2ce22f"
+  },
+  {
+   "file": "06_baseline_evaluations.jsonl",
+   "identical": true,
+   "recorded_sha256": "09a1d1c8a9c888afe1f8556761b08f3d97b90f37c212db01e409c4f0041128a2",
+   "rerun_sha256": "09a1d1c8a9c888afe1f8556761b08f3d97b90f37c212db01e409c4f0041128a2"
+  },
+  {
+   "file": "07_comparison.json",
+   "identical": true,
+   "recorded_sha256": "d209765ecdbcc808041a2fab0b7bfbdc6ffc8a187725054b19e747982fe61cd8",
+   "rerun_sha256": "d209765ecdbcc808041a2fab0b7bfbdc6ffc8a187725054b19e747982fe61cd8"
+  },
+  {
+   "file": "08_selected_candidate.json",
+   "identical": true,
+   "recorded_sha256": "a6de588fe1902fc206acd732ea9e9ac218c8d64c7de1f08af9dad93aa141ba1f",
+   "rerun_sha256": "a6de588fe1902fc206acd732ea9e9ac218c8d64c7de1f08af9dad93aa141ba1f"
+  },
+  {
+   "file": "11_output_checks.json",
+   "identical": true,
+   "recorded_sha256": "aea2377555a508235386d2db6637ff474bb2115e8d44cb9917bee14fa0e826cc",
+   "rerun_sha256": "aea2377555a508235386d2db6637ff474bb2115e8d44cb9917bee14fa0e826cc"
+  },
+  {
+   "file": "12_proof_obligations.json",
+   "identical": true,
+   "recorded_sha256": "b95ebc382e201904948e742d838ee0c657740b60c98845b7b547e2b38cd3d1e5",
+   "rerun_sha256": "b95ebc382e201904948e742d838ee0c657740b60c98845b7b547e2b38cd3d1e5"
+  },
+  {
+   "file": "13_front_diagnostics.json",
+   "identical": true,
+   "recorded_sha256": "1bbbdc1177d2d3d222de8408ee66cf6f8e9642072ac7bd58c7a23730383fa414",
+   "rerun_sha256": "1bbbdc1177d2d3d222de8408ee66cf6f8e9642072ac7bd58c7a23730383fa414"
+  },
+  {
+   "file": "09_uq_corners.json",
+   "identical": true,
+   "recorded_sha256": "9b31cc8b547b6357a2e2bba2a1f009f9ba00b5c293bddaf3b43ebc13ee6ef9bb",
+   "rerun_sha256": "9b31cc8b547b6357a2e2bba2a1f009f9ba00b5c293bddaf3b43ebc13ee6ef9bb"
+  },
+  {
+   "file": "10_sensitivity.json",
+   "identical": true,
+   "recorded_sha256": "05fe647e349169f6838579b530f0b48ef0154440325119b514ec143e45ac676a",
+   "rerun_sha256": "05fe647e349169f6838579b530f0b48ef0154440325119b514ec143e45ac676a"
+  }
+ ],
+ "scope": "Same-machine re-execution by the capsule itself. Independent third-party reproduction is a separate step not performed here."
+}
