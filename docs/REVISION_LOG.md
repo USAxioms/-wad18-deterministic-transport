@@ -210,6 +210,16 @@ writing it. Verified: two consecutive runs and a clean build give byte-identical
   established: there is no first wall in either model, 3-D effects are only in the coverage factor (0.82,
   assumed), data are at 293.6 K with free-gas hydrogen, and there is no benchmark or experimental comparison.
 
+## R13: one-command final run; stale reports corrected
+
+- **One command.** `./run_final.sh` runs the final protocol v1.4.0 (study, held-out PO4 test, reproduction
+  check, report) and prints every verdict via `final_summary.py`.
+- **Clearer default.** `run_capsule.py` with no arguments now states that it replays the original v1.0.1 protocol.
+- **Defect found by testing the new command from a clean unpack.** The shipped `REPORT.md` and
+  `CAPSULE_REPORT.json` of every study still quoted 49 passing tests, because they had not been regenerated
+  after the test suite grew to 61. They were regenerated; no computed result changed.
+- **Verified.** A clean unpack plus `./run_final.sh` now leaves all 232 manifest files byte-identical.
+
 ## Not done, deliberately
 
 R3 was not tuned against the held-out results, and PO6 was not redefined. Changing the
